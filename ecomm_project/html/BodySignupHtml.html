@@ -1,0 +1,55 @@
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="css/bodyCss.css">
+	<script type="text/javascript">
+	 
+	 function myFunction() {
+	     var pass1 = document.getElementById("user_password").value;
+	     var pass2 = document.getElementById("user_repassword").value;
+	     if (pass1 != pass2) {
+	         alert("Passwords Do not match");
+	       //  document.getElementById("pass1").style.borderColor = "#E34234";
+	       //  document.getElementById("pass2").style.borderColor = "#E34234";
+	         document.getElementById("user_password").value="";
+	         
+	         document.getElementById("user_repassword").value="";
+
+		         document.getElementById("errror_message").style.color="RED";
+		         document.getElementById("errror_message").innerHTML="password not match";
+					
+	         
+	         return false;
+	     }
+	 }
+
+
+	</script>
+
+</head>
+
+
+<body>
+
+<div id="body">
+
+<div  class="padding" align="center">
+<fieldset>
+
+ <legend><h2>SIGN-UP </h2></legend> 
+<form  action="bodySignup.php" method="POST" onsubmit="return myFunction()" >
+
+	<b>Email id : </b><input type="email" id="user_emailid" name="user_emailid"><br/>
+	<b>Password : </b><input type="password" id="user_password" name="user_password" required="required" ><br/>
+	<b>Re-Type password : </b><input type="password" id="user_repassword" name="user_repassword" required="required"><br/>
+	<input type="submit" value="add user" onclick="myFunction();">
+	<input type="button" value="cancel" >
+</form>
+<br/>
+<div id="errror_message"></div>
+
+</fieldset>
+</div>
+</div>
+</body>
+</html>
