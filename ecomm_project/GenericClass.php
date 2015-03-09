@@ -45,7 +45,7 @@ class GenericClass
 			}
 			else
 			{
-				header( "Location: HomePageIncluded.php");
+				header( "Location: index.php");
 			}
 	
 	
