@@ -22,7 +22,7 @@
 
   
 	<?php
-		session_start();
+		#session_start();
 		$var=$_REQUEST["key"];
 		
 		$_SESSION['key']=$var;

@@ -22,6 +22,7 @@ class Helper
 	{
 		$sql="INSERT INTO $table($field)VALUES($values)";
 		$this->con->query($sql)or die($this->con->error);
+		return 1;
 	}
 	function insert_all($table,$values)
 	{
