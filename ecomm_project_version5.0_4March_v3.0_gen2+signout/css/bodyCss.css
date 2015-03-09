@@ -1,0 +1,15 @@
+#body
+{
+	
+	height:1200;
+	background-color:lightcyan;
+	padding:5px;
+}
+
+.padding 
+{
+    padding-top: 400px;
+    padding-right: 50px;
+    padding-bottom: 400px;
+    padding-left: 50px;
+}
