@@ -12,7 +12,7 @@ class Helper
 	
 	function __construct($databasename)
 	{
-		$this->con=new mysqli("$this->host","$this->username","$this->password",$databasename);
+		//$this->con=new mysqli("$this->host","$this->username","$this->password",$databasename);
 		
 		$this->con=new mysqli(Config::HOST,Config::USER,Config::PASSWORD,$databasename);
 		
