@@ -38,7 +38,7 @@ $tbl_name="product_details";		//your table name
 		}
 	}
 	/* Setup vars for query. */
-	$targetpage = "pagination.php"; 	//your file name  (the name of this file)
+	$targetpage = "ProductViewPage.php"; 	//your file name  (the name of this file)
 	$limit = 3; 								//how many items to show per page
 	$page = $_REQUEST['page'];
 	if($page) 
