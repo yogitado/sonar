@@ -4,7 +4,7 @@ include('config1.php');
 
 class Helper
 {
-	private $con;
+	public $con;
 	private $host="localhost"; //Your host name
 	private $username="root"; // DB User Name
 	private $password="";//DB pasword
@@ -58,7 +58,7 @@ class Helper
 	/****** Read all record*********************/
 	function read_all($field,$table)
 	{
-		$sql="SELECT * FROM $table";
+		$sql="SELECT $field FROM $table";
 		$result=$this->con->query($sql) or die($this->con->error);
 		if($result->num_rows==0)
 		{
