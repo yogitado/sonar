@@ -8,6 +8,17 @@
 	<link type="text/css" rel="stylesheet" href="css/styleView.css"/>	
 	<link type="text/css" rel="stylesheet" href=".css/styleViewTable.css"/>
 <link href="css/style.css" rel="stylesheet" type="text/css">
+<script type='text/javascript' src="../js/adminLoginValidate.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../css/Signin.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 <?php
