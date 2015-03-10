@@ -17,7 +17,7 @@ include "Helper.php";
 $helperObj=new Helper("ecomm");
 $fields="'product_id','product_name','price','image_name','image_path','description'";
 
-$resultSet=$helperObj->read_all($fields,"product_details");
+$resultSet=$helperObj->read_all("*","product_details");
 
 if(is_array($resultSet))
 {

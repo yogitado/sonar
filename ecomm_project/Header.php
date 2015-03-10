@@ -23,11 +23,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">E-Commerce</a>
+          <a class="navbar-brand" href="index.php">E-Commerce</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><A href="ProductViewPage.php">HOME</A></li>
+            <li><A href="../adminDashbordIncluded.php">HOME</A></li>
             <li><a href="html/AboutUs.html"> About Us</a></li>
             <li><a href="html/loginAdmin.html"> Log OUT</a></li>
           </ul>
