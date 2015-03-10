@@ -1,151 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-	color:white;
-}
-th, td {
-    padding: 12px;
-}
-#header {
-    background-color:black;
-    color:white;
-     text-align:center;
-    padding:5px;
-}
+<!-- js  script for admin login validations -->
+<script type='text/javascript' src="../js/adminLoginValidate.js"></script>
 
-#nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:800px;
-    width:100px;
-    float:left;
-    padding:5px;
-		
-}
-#section {
-    width:350px;
-    float:left;
-    padding:10px;	 	 
-}
-#footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-   padding:5px;	 	 
-}
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../css/Signin.css">
 
-.semi-transparent-button {
-  display: block;
-  box-sizing: border-box;
- 
-  padding: 8px;
-  width: 80%;
-  max-width: 200px;
-  background: #fff; /* fallback color for old browsers */
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-  color:grey;
-  
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-out;
-}
-.semi-transparent-button:hover,
-.semi-transparent-button:focus,
-.semi-transparent-button:active {
-  background: #fff;
-  color: #000;
-  transition: all 0.5s ease-in;
-}
-.semi-transparent:focus {
-  outline: none;
-}
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-.is-blue {
-  background: #1e348e; /* fallback color for old browsers */
-  background: rgba(30, 52, 142, 0.5);
-}
-.is-blue:hover,
-.is-blue:focus,
-.is-blue:active {
-  background: #1e348e; /* fallback color for old browsers */
-  background: rgb(30, 52, 142);
-  color: #fff;
-}
-
-.with-border {
-  border: 1px solid #fff;
-}
-
-a{
-	color:white;
-	text-decoration:none;
-}
-.a_new{
-	color:black;
-	text-decoration:none;
-}
-</style>
 </head>
 
 <body>
 
-<div id="header">
-<table style="width:100%">
-  <tr>
-	<!--  <td><h2 style="color:white"><A href="trialvpjs.php">HOME</A></h2></td>
-	
-    <td><h2><a href="html/CustomerSupport.html"> Customer Support</a></h2></td>
-	
-   	<td><h2><a href="html/AboutUs.html"> About Us</a></h2></td>
-	
-	<td><h2><a href="registerAdmin.html"> LOG IN</a></h2></td>-->
-  </tr>
-</table>
-</div>
+<div class="container">
 
-<div id="nav">
-<!--  <a href="url1" class="a_new"><h2><b>Sign UP</h2></a><br>
+		<form id="register" action="../Success.php" class="form-signin" method="post">
+      
+        <h2 class="form-signin-heading">Please Login </h2>
+        <label for="inputEmail" class="sr-only">Admin name</label>
+        <input type="text"  maxlength="30" name="name" required="required" id="inputEmail" class="form-control" placeholder="Admin name" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" maxlength="20" min="8" name="password" required="required" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+      </form>
 
-<a class="semi-transparent-button" href="url4"> CART </a>-->
-</div>
+    </div> <!-- /container -->
 
-<form id="register" action="../Success.php" method="post">
-<fieldset>
-<legend>Admin User</legend>
-<br>
-Admin Name : <input type="text" maxlength="30" name="name" required="required">
-<br><br>
-Password : <input type="password" maxlength="20" min="8" name="password" required="required">
-<br><br>
-<input type="submit" value="submit" name="submit">
-</fieldset>
-</form>
-
-<script type='text/javascript'>
-// <![CDATA[
-            
-    var frmvalidator = new Validator("register");
-    frmvalidator.EnableOnPageErrorDisplay();
-    frmvalidator.EnableMsgsTogether();
-
-    frmvalidator.addValidation("name","req","Please provide your name");
-    
-    frmvalidator.addValidation("password","req","Please provide a password");
-
-    
-// ]]>
-</script>
-
-<div id="footer">
-Copyright © ALM_E-COM@cybage.com
 </div>
 </body>
 </html>
