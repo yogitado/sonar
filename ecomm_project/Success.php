@@ -19,7 +19,7 @@ if (is_array($result))
 	
 	$_SESSION['name'] = $row['admin_name'];
 	echo "Hi " . $name . "";
-	header("Location: html/After_Admin_Login.html");
+	header("Location: adminDashbordIncluded.php");
 	
 
 }
