@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="js/scriptFunction.js">
 		
 		</script>
@@ -60,9 +62,9 @@ $tbl_name="product_details";		//your table name
 	?>
 	
 		
-						
+						<div class="container">
 						<?php 
-						echo "<table align='left' width=90% >";
+						echo "<table align='left' width=90%>";
 						
 						?>
 	<tr>
@@ -200,7 +202,7 @@ $tbl_name="product_details";		//your table name
 		$pagination.= "</div>\n";		
 	}
 ?>
-
+</div>
 <?=$pagination?>
 <?php include "footer.php";?>
 

@@ -6,6 +6,8 @@ include "html/BodyHomeHtml.html";
 
 echo '<link rel="stylesheet" type="text/css" href="css/bodyCss.css"> ';
 
+echo '<link rel="stylesheet" type="text/css" href="css/bodyHomepageCss.css"> ';
+
 
 echo ' <div id="body"> ' ;
 include "Helper.php";

@@ -27,7 +27,7 @@ else
 {
 	//If the login credentials doesn't match, he will be shown with an error message.
 	echo "Invalid Login Credentials.";
-	header("Location: html/registerAdmin.html");
+	header("Location: adminindex.php");
 }
 
 ?>
