@@ -13,6 +13,43 @@
 
 <link rel="stylesheet" type="text/css" href="css/footerCss.css">
 
+<script lang="javascript">
+function ValidateEmail(mail)   
+{  
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(loginform.email.value))  
+  {  
+    return (true)  
+  }  
+    alert("You have entered an invalid email address!")  
+    return (false)  
+}  
+</script>
+
+
+	<script type="text/javascript">
+	 
+	 function myFunction() {
+	     var pass1 = document.getElementById("user_password").value;
+	     var pass2 = document.getElementById("user_repassword").value;
+	     if (pass1 != pass2) {
+	         alert("Passwords Do not match");
+	       //  document.getElementById("pass1").style.borderColor = "#E34234";
+	       //  document.getElementById("pass2").style.borderColor = "#E34234";
+	         document.getElementById("user_password").value="";
+	         
+	         document.getElementById("user_repassword").value="";
+
+		         document.getElementById("errror_message").style.color="RED";
+		         document.getElementById("errror_message").innerHTML="password not match";
+					
+	         
+	         return false;
+	     }
+	 }
+
+
+	</script>
+
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.js"></script>

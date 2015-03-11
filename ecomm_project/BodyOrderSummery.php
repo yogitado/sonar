@@ -1,4 +1,3 @@
- <body>
  <pre>  
 <link rel="stylesheet" type="text/css" href="css/bodyCss.css">
  <div id="body" >
@@ -116,5 +115,5 @@ foreach($record as $key )
 </div>
  </pre>
  
- </body>
+
  
