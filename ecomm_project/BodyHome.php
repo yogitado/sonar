@@ -1,16 +1,15 @@
-
 <?php
-session_start();
+#session_start();
 include "html/BodyHomeHtml.html";
+include "Helper.php";
 
 
-echo '<link rel="stylesheet" type="text/css" href="css/bodyCss.css"> ';
 
-echo '<link rel="stylesheet" type="text/css" href="css/bodyHomepageCss.css"> ';
+#
 
 
 echo ' <div id="body"> ' ;
-include "Helper.php";
+
 
 
 
@@ -25,43 +24,105 @@ if(is_array($resultSet))
 {
 
    echo '<form method="POST">';
+   
+   
+echo '<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%"> ';
+
+?>
+
+    <thead>
+            <tr>
+                <th>product_id</th>
+                <th>image</th> 
+                <th>price</th>
+                <th>productname</th>
+                <th> descreption</th>
+                <th>Checkbox</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th>product_id</th>
+              <th>image</th> 
+                <th>price</th>
+                <th>productname</th>
+                <th>descreption</th>
+                <th>Checkbox</th>
+            </tr>
+        </tfoot>
+
+
+
+
+
+
+
+
+
+<?php
+
+
+
 	foreach($resultSet as $row)
 	{
 		
-			echo "<div id='".$row['product_id']."' class='pagedivision'>"; 
-			echo  '<div id="imagesect" >'; 
-				
-			echo  '<img src="'. $row['image_path'] .'" alt="Mountain View" style="height:300px; width:200px " >';
-				
-				
-			echo '</div>'; 
-				
-				
-			echo '<div id="datashow" >'; 
-					
-				
-			echo '<h2>'. "Second Div " .'</h2>'; 
-			echo $row['product_name'] ; 
-			
-			echo '<br>';
-			
-			echo $row['product_id']; 
-			echo '<br>';
-			
-			echo $row['price']; 
-			echo '<br>';
-					
-			echo $row['description']; 
-			echo '<br>';		
-					
-			echo '<input type="checkbox" class="items" name="cartarr[]" value="'.implode(",",$row).'">';
-		#	echo "<input type='hidden'  name='".$row['product_id']."' value='".implode(",",$row)."' />";
-			echo '</div>'; 
-			echo '</div>'; 
-				
-	
+		
+		?>
+
+    
+ 
+        <tbody>
+		
+		
+		
+		
+		<tr>
+				<td width="60"><b><?=$row['product_id'] ?></b></td>
+                <td width="30" ><img src='<?=$row["image_path"]?>' width=150px height=150px></td> <!-- columns can have both text and images -->
+								<td width="30" ><?=$row['price'] ?>              </td>
+								<td width="60" ><b><?=$row['product_name'] ?></b></td>
+						    	<td width="120" ><?=$row['description'] ?>        </td>
+              
+<?php			  echo ' <td width="10"><input type="checkbox" class="items" name="cartarr[]" value="'.implode(",",$row).'"></td> ';
+           echo ' </tr> ';
+           
+       echo ' </tbody> ';
+ 
+		
+		?>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<?php	
+
 	
 	}
+	  echo ' </table> ';
 	
 	echo '<input type="button" name="cartarr" id="submitCart" value="Add To Cart">';
 	
