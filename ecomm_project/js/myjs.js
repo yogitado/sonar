@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
 
-alert("hi");
+alert("from myjs.js");
     $('#example').dataTable();
 	
 	
