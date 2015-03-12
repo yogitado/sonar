@@ -14,3 +14,13 @@ function delete_product(value)
 				//alert(value);
 				window.location="fetch_query.php?update="+value;
 				}
+				
+					function delete_user(value)
+				{
+				alert(value);
+				window.location="delete_query.php?delete="+value;
+				}
+				
+				function newDoc() {
+    window.location.assign("ProductViewPage.php")
+	}

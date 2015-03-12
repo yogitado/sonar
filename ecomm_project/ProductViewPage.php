@@ -1,37 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="js/scriptFunction.js">
-		
-		</script>
-	<link type="text/css" rel="stylesheet" href="css/header.css"/>	
-	<link type="text/css" rel="stylesheet" href="css/styleView.css"/>	
-	<link type="text/css" rel="stylesheet" href=".css/styleViewTable.css"/>
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<script type='text/javascript' src="../js/adminLoginValidate.js"></script>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="../css/Signin.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-</head>
-<body>
 <?php
 //include('Helper.php');
-//working priya...wahh this is it!!!!!
+
 include('Helper_page.php');
 
-include "Header.php";
-
-
-include "Navigation.php";
+include "html/adminHeader.html";
 
 $tbl_name="product_details";		//your table name
 	// How many adjacent pages should be shown on each side?
@@ -60,20 +33,21 @@ $tbl_name="product_details";		//your table name
 	else
 		$start = 0;								//if no page var is given, set start to 0
 	?>
-	
-		
-						<div class="container">
+					<div class="container">
+					<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+						<div class="table-responsive">
+							
 						<?php 
-						echo "<table align='left' width=90%>";
+						echo "<table align='left' width=90% border='1'class='table table-striped'>";
 						
 						?>
 	<tr>
-   						    <th width="80" class="ab">Image</th>
-    						<th width="60" class="ab">Product Name</th>
-    						<th width="30" class="ab">Price</th>
-   						    <th width="80" class="ab">Description</th>
-    						<th width="30" class="ab">Product ID</th>
-    						<th width="10" class="ab">Select</th>
+   						    <th width="80" >Image</th>
+    						<th width="60" >Product Name</th>
+    						<th width="30" >Price</th>
+   						    <th width="80">Description</th>
+    						<th width="30" >Product ID</th>
+    						<th width="10" >Select</th>
     						<br/>
  					    </tr>
 						<?php
@@ -90,12 +64,12 @@ $tbl_name="product_details";		//your table name
 							
 							?>
 						
-								<td width="" class="ab"><img src='<?=$row["image_path"]?>' width=150px height=150px></td> <!-- columns can have both text and images -->
-								<td width="60" class="ab"><b><?=$row['product_name'] ?></b></td>
-						    	<td width="30" class="ab"><?=$row['price'] ?>              </td>
-								<td width="80" class="ab"><?=$row['description'] ?>        </td>
-								<td width="30" class="ab"><?=$row['product_id'] ?>         </td>
-								<td width="80" class="ab">
+								<td width="80" ><img src='<?=$row["image_path"]?>' width=150px height=150px></td> <!-- columns can have both text and images -->
+								<td width="60" ><b><?=$row['product_name'] ?></b></td>
+						    	<td width="30" ><?=$row['price'] ?>              </td>
+								<td width="80" ><?=$row['description'] ?>        </td>
+								<td width="30" ><?=$row['product_id'] ?>         </td>
+								<td width="80" >
                            
 						   
 						   <input type="button" value="DELETE" onClick='delete_product("<?=$row['product_id'] ?>")'/>
@@ -127,7 +101,9 @@ $tbl_name="product_details";		//your table name
 	$pagination = "";
 	if($lastpage > 1)
 	{	
-		$pagination .= "<div class=\"pagination\">";
+		$pagination .= "
+		<center>
+		<div class=\"pagination\">";
 		//previous button
 		if ($page > 1) 
 			$pagination.= "<a href=\"$targetpage?page=$prev\">previous</a>";
@@ -199,12 +175,12 @@ $tbl_name="product_details";		//your table name
 			$pagination.= "<a href=\"$targetpage?page=$next\">next </a>";
 		else
 			$pagination.= "<span class=\"disabled\">next</span>";
-		$pagination.= "</div>\n";		
+		$pagination.= "</div></center> </div>";		
 	}
 ?>
 </div>
+</div>
 <?=$pagination?>
-<?php include "footer.php";?>
+<?php 
+include "html/adminNavigation.html";?>
 
-</body>
-</html>
