@@ -1,7 +1,6 @@
 <?php
 
-require("C:/xampp/htdocs/eco/ecomm_project/config1.php");
-
+require("ecomm_project/config1.php");
 class ConfigTest extends PHPUnit_Framework_TestCase
 	{
 		public function testHostconfiguration()
