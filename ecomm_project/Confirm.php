@@ -33,14 +33,14 @@ $cnt=0;
 		if($cnt==1)
 		{
 		$prod=$booking2;
-		echo "PRODID=$prod";
-		 echo "<br>";
+		#echo "PRODID=$prod";
+		 #echo "<br>";
 		}
 		if($cnt==3)
 		{
 		$price=$booking2;
-		echo "PRICE=$price";
-		echo "<br>";
+		#echo "PRICE=$price";
+		#echo "<br>";
 		}
 		if($cnt==6) 
 		{
@@ -48,7 +48,8 @@ $cnt=0;
 		$result=$helperObj->insert($table,$field,$values);
 		if($result)
 		{
-		echo "data inserted";
+		#echo "data inserted";
+		echo "THANK YOU...VISIT AGAIN...!!!   "
 		}
 		$cnt=0;
 		
