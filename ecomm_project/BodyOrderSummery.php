@@ -3,7 +3,7 @@
  <div id="body" >
  <fieldset>
 <legend>Order summery page</legend>
-  <table border="2" align="center">
+  <table border="2" class="table table-striped table-bordered" align="center">
   <thead>
     <tr>
       <th>Product_Id</th>
@@ -17,7 +17,7 @@
 <?php
 include "Helper.php";
 $var=$_SESSION['user'];
-var_dump($var);
+#var_dump($var);
 $obj = new Helper("ecomm");
 $field="user_id,mobile,address,city,zip";
 $table="user_details";

@@ -15,7 +15,7 @@ header("Location:Confirm.php");
 
 if($_REQUEST['btn_submit']=="Cancel")
 {
-echo "Cancel";
+header("Location:index.php");
 }  
 
 ?>

@@ -3,11 +3,6 @@
 include "html/BodyHomeHtml.html";
 include "Helper.php";
 
-
-
-#
-
-
 echo ' <div id="body"> ' ;
 
 
@@ -71,7 +66,6 @@ echo '<table id="example" class="table table-striped table-bordered" cellspacing
 		?>
 
     
- 
         <tbody>
 		
 		
@@ -97,27 +91,6 @@ echo '<table id="example" class="table table-striped table-bordered" cellspacing
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	<?php	
 
 	
@@ -131,8 +104,6 @@ echo '<table id="example" class="table table-striped table-bordered" cellspacing
 	
 }
 
-echo ' </div> ';
-echo '<div id="response4" style="height:100px;width:100px;border:5px solid blue"></div>';
 ?>
 
 
