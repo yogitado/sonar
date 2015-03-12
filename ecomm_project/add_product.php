@@ -23,9 +23,9 @@ include "html/adminHeader.html";
 <b>Image Name  : </b><input type="text" name="image_name" id="in" /></br>
 <b>Image Path  : </b><input type="file" name="image_path">
 <b>Description : </b><textarea name="description" rows="10" cols="25"></textarea></br>
-<input type="submit" value="Add/Update" />
+<input type="submit" value="Add/Update" /> <button type="button" onclick="newDoc()">Cancel</button>
 <input type="hidden" name="operation" value="add"/>
-  <button type="button" onclick="newDoc()">Cancel</button>
+  
   </pre>
 </div>
 
