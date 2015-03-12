@@ -4,9 +4,9 @@
  <div id="body">
  
  
+ <h1 style="color:red;text-align:center">Your Cart</h1>
  
- 
- <table border="2">
+ <table class="table table-striped table-bordered" border="2">
   <thead>
     <tr>
       <th>Product_Id</th>
