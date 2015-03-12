@@ -27,18 +27,18 @@ echo '<table id="example" class="table table-striped table-bordered" cellspacing
 
     <thead>
             <tr>
-                <th>product_id</th>
+                <th>Sr.no</th>
                 <th>image</th> 
                 <th>price</th>
                 <th>productname</th>
-                <th> descreption</th>
+                <th>descreption</th>
                 <th>Checkbox</th>
             </tr>
         </thead>
  
         <tfoot>
             <tr>
-                <th>product_id</th>
+                <th>Sr.no</th>
               <th>image</th> 
                 <th>price</th>
                 <th>productname</th>
@@ -47,7 +47,8 @@ echo '<table id="example" class="table table-striped table-bordered" cellspacing
             </tr>
         </tfoot>
 
-
+ 
+ 
 
 
 
@@ -59,6 +60,16 @@ echo '<table id="example" class="table table-striped table-bordered" cellspacing
 
 
 
+
+echo ' <tbody>';
+
+?>
+ 
+<?php
+
+
+$count=1;
+
 	foreach($resultSet as $row)
 	{
 		
@@ -66,13 +77,13 @@ echo '<table id="example" class="table table-striped table-bordered" cellspacing
 		?>
 
     
-        <tbody>
+       
 		
 		
 		
 		
 		<tr>
-				<td width="60"><b><?=$row['product_id'] ?></b></td>
+				<td width="60"><b><?=$count++ ?></b></td>
                 <td width="30" ><img src='<?=$row["image_path"]?>' width=150px height=150px></td> <!-- columns can have both text and images -->
 								<td width="30" ><?=$row['price'] ?>              </td>
 								<td width="60" ><b><?=$row['product_name'] ?></b></td>
@@ -81,7 +92,7 @@ echo '<table id="example" class="table table-striped table-bordered" cellspacing
 <?php			  echo ' <td width="10"><input type="checkbox" class="items" name="cartarr[]" value="'.implode(",",$row).'"></td> ';
            echo ' </tr> ';
            
-       echo ' </tbody> ';
+     
  
 		
 		?>
@@ -95,6 +106,7 @@ echo '<table id="example" class="table table-striped table-bordered" cellspacing
 
 	
 	}
+	  echo '</tbody>';
 	  echo ' </table> ';
 	
 	echo '<input type="button" name="cartarr" id="submitCart" value="Add To Cart">';

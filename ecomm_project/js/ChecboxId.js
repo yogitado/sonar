@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 var Carts=[];
 var selectedCart;
-
+alert("from checbox.js");
     console.log("Javascript Ready");
     $('#submitCart').click(function(){
 		alert('submit clicked');

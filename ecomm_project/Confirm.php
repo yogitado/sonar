@@ -8,8 +8,8 @@ $field="user_id,product_id,price";
 
 
 $arra=array(explode(";",$_SESSION['key']));
-var_dump($arra);
-echo "<br>";
+#var_dump($arra);
+#echo "<br>";
 
 
  foreach ($arra as $booking) 
@@ -17,11 +17,11 @@ echo "<br>";
   #print_r($booking);
   $temp=$booking;
   $a=implode(",",$temp);
-  var_dump($a);
+  #var_dump($a);
   echo "<br>";
   $temp=explode(",",$a);
   
-  var_dump($temp);
+ # var_dump($temp);
   echo "<br>";
 
 $cnt=0;
@@ -33,14 +33,14 @@ $cnt=0;
 		if($cnt==1)
 		{
 		$prod=$booking2;
-		echo "PRODID=$prod";
-		 echo "<br>";
+		#echo "PRODID=$prod";
+		 #echo "<br>";
 		}
 		if($cnt==3)
 		{
 		$price=$booking2;
-		echo "PRICE=$price";
-		echo "<br>";
+		#echo "PRICE=$price";
+		#echo "<br>";
 		}
 		if($cnt==6) 
 		{
@@ -48,7 +48,9 @@ $cnt=0;
 		$result=$helperObj->insert($table,$field,$values);
 		if($result)
 		{
-		echo "data inserted";
+		#echo "data inserted";
+		echo "THANK YOU...VISIT AGAIN...!!!   ";
+		echo "<br>";
 		}
 		$cnt=0;
 		
