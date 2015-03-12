@@ -29,7 +29,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><A href="../adminDashbordIncluded.php">HOME</A></li>
             <li><a href="html/AboutUs.html"> About Us</a></li>
-            <li><a href="html/loginAdmin.html"> Log OUT</a></li>
+            <li><a href="AdminLogout.php"> Log OUT</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
