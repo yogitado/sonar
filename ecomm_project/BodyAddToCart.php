@@ -26,7 +26,7 @@
 		$var=$_REQUEST["key"];
 		
 		$_SESSION['key']=$var;
-		
+		$price=0;
 
 	#print_r($_POST);
 
@@ -68,7 +68,10 @@
 		
 		#echo $cnt;
 	
-	
+		if($cnt==3)
+		{
+			$price+=$booking2;
+		}
 		
 		
 		
@@ -103,7 +106,11 @@
 	
 	
 ?>
+<tr>
 
+<td colspan="5"><h4 style="color:blue;text-align:center">Total Price</h4></td>
+<td><h4 style="color:blue;text-align:center"><?php  echo $price;?></h4></td>
+</tr>
 </table>
 
 <!-- <form action="OrderSummeryPageIncluded.php" method="POST"> -->
