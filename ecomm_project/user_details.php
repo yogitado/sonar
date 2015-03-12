@@ -8,11 +8,6 @@ include "html/adminHeader.html";
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
 						<div class="table-responsive">
 
-
-
-
-				
-						
 						<?php 
 						echo "<table align='left' width=90% border='1'class='table table-striped'>";
 						
