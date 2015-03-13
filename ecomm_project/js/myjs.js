@@ -42,6 +42,10 @@ $(document).ready(function() {
 		
       });
 	
+	 $('#back_to_shopping').click(function(){
+		window.location="index.php";
+		
+      });
 	
 	
 	
