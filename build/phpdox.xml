@@ -16,7 +16,7 @@
    </enrich>
 
    <build engine="html" enabled="true" output="api">
-    <file extension="html"/>
+   <file extension="html"/>
    </build>
   </generator>
  </project>

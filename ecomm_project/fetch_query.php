@@ -14,12 +14,14 @@ $product_id=$_REQUEST['update'];
  if(is_array($result)){
  foreach($result as $row){
 ?>
+
 <input type="hidden" name="product_id" id="pn"  value="<?php echo $row['product_id'];?>" /></br>
 <b>Product Name: </b><input type="text" name="product_name" id="pn"  value="<?php echo $row['product_name'];?>" /></br>
 <b>Price:  </b>      <input type="text" name="price" id="price"  value="<?php  echo $row['price']; ?>" /></br>
 <b>Image Name: </b>  <input type="text" name="image_name" id="in"  value="<?php echo  $row['image_name']; ?>" /></br>
 <b>Image Path: </b>  <input type="file" name="image_path"  value="<?php echo $row['image_path']; ?>">
 <b>Description: </b> <input type="text" name="description" value="<?php echo $row['description']; ?>" style="height:50px;width:330px"></br>
+
 <?php
 }
 }
