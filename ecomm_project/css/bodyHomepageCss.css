@@ -5,7 +5,7 @@ line-height:30px;
     width:200px;
     float:left;
     padding:5px;
-	 border-style: solid;
+	 border-style: ridge;
     border-width: 2px;
 }
 #datashow{
@@ -15,7 +15,7 @@ line-height:30px;
     width:200px;
     float:left;
     padding:5px;
-	 border-style: solid;
+	 border-style: groove;
     border-width: 2px;
 }
 #one{
