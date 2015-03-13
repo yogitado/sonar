@@ -4,13 +4,11 @@ class Helper_page extends Helper
 {
 function __construct($databasename)
 	{
-		 parent::__construct($databasename);
+		parent::__construct($databasename);
 	}
-	
 function read_page($field,$table ,$condition)
 	{
 		$sql="SELECT $field FROM $table $condition";
-		//print_r($sql); 
 		$result=$this->con->query($sql) or die($this->con->error);
 		if($result->num_rows==0)
 		{
@@ -31,5 +29,4 @@ function read_page($field,$table ,$condition)
 	}
 }
 $helper_page=new Helper_page("ecomm");
-
 ?>
