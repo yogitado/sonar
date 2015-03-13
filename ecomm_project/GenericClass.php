@@ -1,65 +1,53 @@
 <?php
    session_start();
-   class GenericClass{
-   public function checFunLogin($email,$pass)
+   class GenericClass
+   {
+   public function checFunLogin($email, $pass)
    {
     $obj=new Helper("ecomm");
     $field="user_id,email_id,password";
     $table="user";
     $condition=" email_id='$email' AND password='$pass' ";
-    $result=$obj->read_record($field,$table ,$condition);
-    if (is_array($result))
-    {
-    foreach($result as $row)
-    {
+    $result=$obj->read_record($field, $table, $condition);
+    if (is_array($result)){
+    foreach ($result as $row){
     $_SESSION['user'] = $row['user_id'];
     $_SESSION['email'] =$row['email_id'];
     $_SESSION['pass'] =$row['password'];
-    if(isset($_SESSION['key']))					
-    {
-	header( "Location: OrderSummaryPageIncluded.php");
-    }
-    else
-    {
-    header( "Location: index.php");
+    if (isset($_SESSION['key'])){
+	header("Location: OrderSummaryPageIncluded.php");
+    } else{
+    header("Location: index.php");
     }	
     }
-    }
-    else
-   {
+    } else{
    echo "Invalid Login Credentials.";
    header("Location: LoginPageIncluded.php");
    }  
    }
-   public function checkFunctionSummery($email,$pass)
+   public function checkFunctionSummery($email, $pass)
   {
   $obj=new Helper("ecomm"); 
-  if(isset($email) && isset($pass))
-  {
+  if(isset($email) && isset($pass)){
   $field="user_id";
   $table="user";
   $condition=" email_id='$email' AND password='$pass' ";
-  $result=$obj->read_record($field,$table ,$condition);
-  if (is_array($result))	
-  {		
-  foreach($result as $row)
-  {
-  if($_SESSION['user'] == $row['user_id'])
-  {
+  $result=$obj->read_record($field, $table, $condition);
+  if (is_array($result)){		
+  foreach($result as $row){
+  if($_SESSION['user'] == $row['user_id']){
   header("Location: OrderSummaryPageIncluded.php");
   }
   }	
   }
-  else
-  {
+  else{
   echo "Invalid Login Credentials.";
-  header( "Location: LoginPageIncluded.php");
+  header("Location: LoginPageIncluded.php");
   }
   }
-  else
-  {
+  else{
   echo "Invalid Login Credentials.";
-  header( "Location: LoginPageIncluded.php");
+  header("Location: LoginPageIncluded.php");
   }
   }
   }
