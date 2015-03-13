@@ -1,10 +1,10 @@
 <?php
 session_start();
-#echo "in validate.php";
+
 if($_REQUEST['btn_submit']=="Address")
 {
 echo "Address";
-header("Location:AddAddressIncluded.php");
+header("Location:UpdateAddress.php");
 }
 
 if($_REQUEST['btn_submit']=="Confirm")
@@ -17,5 +17,4 @@ if($_REQUEST['btn_submit']=="Cancel")
 {
 header("Location:index.php");
 }  
-
 ?>

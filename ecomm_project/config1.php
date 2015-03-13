@@ -6,9 +6,6 @@ class Config
           USER     = 'ecomm',
           PASSWORD = 'ecomm@123',
 		
-			HELPER = "Helper.php";
-		 //LOCATION ='http://localhost:81/sample/emp.php';
-          //ANOTHER_VAR = true;
+		HELPER = "Helper.php";
 } 
- 
 ?>

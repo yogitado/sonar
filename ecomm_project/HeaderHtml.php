@@ -232,9 +232,7 @@ function ValidateEmail(mail)
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.php">HOME</a></li>
             <li><a href="AboutusCustIncluded.php"> About Us</a></li>
-            <li><a href="SignOutPageincluded.php"> Log OUT</a></li>
-			 <li><a href="SignupPageincluded.php"> Sign Up </a></li>
-			  <li><a href="LoginPageIncluded.php"> Log In </a></li>
+          			
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -261,7 +259,7 @@ function ValidateEmail(mail)
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="images/ecom_header1.png" alt="Chania" width="460" height="345">
+        <img src="images/ecom_header1.jpg" alt="Chania" width="460" height="345">
       </div>
 
       <div class="item">
