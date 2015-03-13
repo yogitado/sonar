@@ -1,5 +1,5 @@
 <?php 
-include "html/HeaderHtml.html";
+include "HeaderHtml.php";
 
 include "html/BodyThankyou.html";
 #print_r($_SESSION['user']);

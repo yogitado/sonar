@@ -18,6 +18,14 @@ session_start();
 	$field="email_id,password";
 	$tableName="user";
 	
+	
+	
+	
+	
+	
+	
+	
+	
 	$obj->insert($tableName,$field,$val);
 
 $email=	$_POST['user_emailid'];
@@ -37,7 +45,7 @@ $condition=" email_id='$email' AND password='$pass' ";
 $result=$obj->read_record($field,$table ,$condition);
 //var_dump($result);
 //var_dump($field);
- #$count = mysql_num_rows($result);
+#$count = mysql_num_rows($result);
  
 	if (is_array($result))
 	{

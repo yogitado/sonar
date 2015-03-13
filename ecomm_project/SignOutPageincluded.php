@@ -3,7 +3,7 @@ session_start();
 session_destroy();
 
 
-include "html/HeaderHtml.html";
+include "HeaderHtml.php";
 include "html/BodyHtml.html";
 include "html/FooterHtml.html";
 

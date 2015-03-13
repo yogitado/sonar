@@ -4,18 +4,13 @@ include "Helper.php";
 $helperObj=new Helper("ecomm");
 $table="buy_details";
 $field="user_id,product_id,price";
-
-
 $arra=array(explode(";",$_SESSION['key']));
-
-
- foreach ($arra as $booking) {
+foreach ($arra as $booking) {
   $temp=$booking;
   $a=implode(",",$temp);
   echo "<br>";
   $temp=explode(",",$a);
   echo "<br>";
-
 $cnt=0;
      foreach ($temp as $booking2) {
 	   $cnt++;
@@ -51,6 +46,6 @@ $cnt=0;
 }
 
 }
-
+}
 
 ?>

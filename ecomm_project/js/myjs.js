@@ -7,6 +7,18 @@ $(document).ready(function() {
 	
 	
 	
+	
+		 x = $(".message").text().trim(); 
+    if ( !!x) { 
+        $("#button_login").hide(); 
+        $("#button_logout").show(); 
+    } 
+    else { 
+        $("#button_logout").hide(); 
+        $("#button_login").show(); 
+    } 
+	
+	
 	    $('#button_home').click(function(){
 		alert('button clicked');
 		console.log("button click");
@@ -49,7 +61,62 @@ $(document).ready(function() {
 	
 	
 	
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	  $('#back_to_shopping').click(function(){
+	  
+	  
+	  
+	   
 	
+	
+	
+		
+      });
+	 
+	 
+	 
+	 
+	 
+	 
+	
+   
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
 	
 	
 	
