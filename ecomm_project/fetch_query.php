@@ -1,8 +1,11 @@
-<?php include "Helper.php"; 
+<?php 
+include "Helper.php"; 
 $product_id=$_REQUEST['update'];
 ?>	
-<?php include "html/adminHeader.html";?>
-	
+
+<?php 
+include "html/adminHeader.html";
+?>
 
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
 <form style="align:center" action="Product.php" enctype="multipart/form-data" method="post">
@@ -19,7 +22,6 @@ $product_id=$_REQUEST['update'];
 <b>Price:  </b>      <input type="text" name="price" id="price"  value="<?php  echo $row['price']; ?>" required/></br>
 <b>Image Name: </b>  <input type="text" name="image_name" id="in"  value="<?php echo  $row['image_name'];?>" required/></br>
 <b>Image Path: </b>  <input type="file" name="image_path"  value="<?php echo $row['image_path'];?>" required/>
-<!--<b>Description : </b><textarea name="description" rows="10" cols="25" value="<?php echo $row['description']; ?>"></textarea></br>-->
 <b>Description: </b> <textarea rows="10" cols="25"name="description" value="<?php echo $row['description'];?>" required></textarea></br>
 <?php
 }
@@ -30,7 +32,5 @@ $product_id=$_REQUEST['update'];
 </div>
 </form>
 <?php 
-include "html/adminNavigation.html";?>
-
-
-
+include "html/adminNavigation.html";
+?>

@@ -26,6 +26,7 @@ $start = 0;								//if no page var is given, set start to 0
 <?php 
 echo "<table align='left' width=90% border='1'class='table table-striped'>";
 ?>
+
 <tr>
 <th width="80" >Image</th>
 <th width="60" >Product Name</th>
@@ -35,6 +36,7 @@ echo "<table align='left' width=90% border='1'class='table table-striped'>";
 <th width="10" >Select</th>
 <br/>
 </tr>
+
 <?php
 $sql =$helper_page->read_page("*","product_details","LIMIT $start,$limit");
 
@@ -44,6 +46,7 @@ $sql =$helper_page->read_page("*","product_details","LIMIT $start,$limit");
       {
       $product_id=$row['product_id'];
 ?>
+
        <td width="80" ><img src='<?=$row["image_path"]?>' width=150px height=150px></td> <!-- columns can have both text and images -->
        <td width="60" ><b><?=$row['product_name'] ?></b></td>
        <td width="30" ><?=$row['price'] ?>              </td>
@@ -54,13 +57,13 @@ $sql =$helper_page->read_page("*","product_details","LIMIT $start,$limit");
        <input type="button" value="UPDATE" onClick='update_product("<?=$row['product_id'] ?>")'/>
        </td>
        <input type="hidden" name="page" value="2" />	<br/>	
-       </tr>			   
+       </tr>
+	   
 <?php     
-      }
+    }
 echo "</table>";						
    }	
-?>
-<?php					
+
 /* Setup page vars for display. */
 if ($page == 0) 
 $page = 1;					//if no page var is given, default to 1.
@@ -154,5 +157,5 @@ $pagination.= "</div></center> </div>";
 </div>
 <?=$pagination?>
 <?php 
-include "html/adminNavigation.html";?>
-
+include "html/adminNavigation.html";
+?>
