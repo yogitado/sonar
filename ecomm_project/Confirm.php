@@ -49,8 +49,10 @@ $cnt=0;
 		if($result)
 		{
 		#echo "data inserted";
-		echo "THANK YOU...VISIT AGAIN...!!!   ";
-		echo "<br>";
+		//echo "THANK YOU...VISIT AGAIN...!!!   ";
+		//echo "<br>";
+		
+		header( "location:ThankyouPageIncluded.php");
 		}
 		$cnt=0;
 		
