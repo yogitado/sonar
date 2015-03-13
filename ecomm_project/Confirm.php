@@ -1,51 +1,37 @@
 <?php
 session_start();
 include "Helper.php";
-#	function insert($table,$field,$values)
 $helperObj=new Helper("ecomm");
 $table="buy_details";
 $field="user_id,product_id,price";
 
 
 $arra=array(explode(";",$_SESSION['key']));
-#var_dump($arra);
-#echo "<br>";
 
 
- foreach ($arra as $booking) 
- {
-  #print_r($booking);
+ foreach ($arra as $booking) {
   $temp=$booking;
   $a=implode(",",$temp);
-  #var_dump($a);
   echo "<br>";
   $temp=explode(",",$a);
-  
- # var_dump($temp);
   echo "<br>";
 
 $cnt=0;
-     foreach ($temp as $booking2) 
-	 {
+     foreach ($temp as $booking2) {
 	   $cnt++;
       $user=$_SESSION['user'];
 	 
-		if($cnt==1)
-		{
+		if($cnt==1){
 		$prod=$booking2;
-		#echo "PRODID=$prod";
-		 #echo "<br>";
 		}
-		if($cnt==3)
-		{
+		if($cnt==3){
 		$price=$booking2;
-		#echo "PRICE=$price";
-		#echo "<br>";
 		}
 		if($cnt==6) 
 		{
 		$values="'$user','$prod','$price'";
 		$result=$helperObj->insert($table,$field,$values);
+<<<<<<< HEAD
 		if($result)
 		{
 		#echo "data inserted";
@@ -53,6 +39,11 @@ $cnt=0;
 		//echo "<br>";
 		
 		header( "location:ThankyouPageIncluded.php");
+=======
+		if($result){
+		echo "THANK YOU...VISIT AGAIN...!!!   ";
+		echo "<br>";
+>>>>>>> a56ed6dbfdee10cec1e06ac7d42c5c3d84b92da4
 		}
 		$cnt=0;
 		
