@@ -31,9 +31,19 @@ $cnt=0;
 		{
 		$values="'$user','$prod','$price'";
 		$result=$helperObj->insert($table,$field,$values);
+
+		if($result)
+		{
+		#echo "data inserted";
+		//echo "THANK YOU...VISIT AGAIN...!!!   ";
+		//echo "<br>";
+		
+		header( "location:ThankyouPageIncluded.php");
+
 		if($result){
 		echo "THANK YOU...VISIT AGAIN...!!!   ";
 		echo "<br>";
+
 		}
 		$cnt=0;
 		
