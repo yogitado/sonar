@@ -1,5 +1,5 @@
-function delete_user(value)
+function update_user(value)
 				{
 				
-				window.location="delete_query.php?delete="+value;
+				window.location="update_query.php?update="+value;
 				}
