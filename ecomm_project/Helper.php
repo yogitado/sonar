@@ -2,36 +2,53 @@
 include('config1.php');
 
 
-class Helper{
+class Helper
+{
 	public $con;
-	function __construct($databasename){
-		$this->con=new mysqli(Config::HOST,Config::USER,Config::PASSWORD,$databasename);	
+	private $host="localhost"; //Your host name
+	private $username="root"; // DB User Name
+	private $password="";//DB pasword
+	private $port=""; // DB Port
+	
+	function __construct($databasename)
+	{
+		//$this->con=new mysqli("$this->host","$this->username","$this->password",$databasename);
+		
+		$this->con=new mysqli(Config::HOST,Config::USER,Config::PASSWORD,$databasename);
+		
 	}
 	/********Insert Function**************/
-	function insert($table,$field,$values){
+	function insert($table,$field,$values)
+	{
 		$sql="INSERT INTO $table($field)VALUES($values)";
-		$this->con->query($sql)|| die($this->con->error);
+		$this->con->query($sql)or die($this->con->error);
 		return 1;
 	}
-	function insert_all($table,$values){
+	function insert_all($table,$values)
+	{
 		$sql="INSERT INTO $table VALUES($values)";
-		$this->con->query($sql)|| die($this->con->error);
+		$this->con->query($sql)or die($this->con->error);
 	}
 	/*************Delete Function ***************/
-	function delete($table,$condition){
+	function delete($table,$condition)
+	{
 		$sql="DELETE FROM $table WHERE $condition";
 		$this->con->query($sql);
 	}
 	/************Select Function**************/
-	function read_record($field,$table,$condition){
+	function read_record($field,$table,$condition)
+	{
 		$sql="SELECT $field FROM $table WHERE $condition";
-		$result=$this->con->query($sql) || die($this->con->error);
+		$result=$this->con->query($sql) or die($this->con->error);
 		var_dump($sql);
-		if($result->num_rows==0){
+		if($result->num_rows==0)
+		{
 			return "No rows found";
 		}
-		else{
-			while($row=$result->fetch_array(MYSQL_ASSOC)){
+		else
+		{
+			while($row=$result->fetch_array(MYSQL_ASSOC))
+			{
 				$data[]=$row;
 			}
 			 
@@ -39,14 +56,18 @@ class Helper{
 		}
 	}
 	/****** Read all record*********************/
-	function read_all($field,$table){
+	function read_all($field,$table)
+	{
 		$sql="SELECT $field FROM $table";
-		$result=$this->con->query($sql) || die($this->con->error);
-		if($result->num_rows==0){
+		$result=$this->con->query($sql) or die($this->con->error);
+		if($result->num_rows==0)
+		{
 			return "No rows found";
 		}
-		else{
-			while($row=$result->fetch_array(MYSQL_ASSOC)){
+		else
+		{
+			while($row=$result->fetch_array(MYSQL_ASSOC))
+			{
 				$data[]=$row;
 			}
 			
@@ -55,11 +76,13 @@ class Helper{
 	}
 
 	/************Update Function**************/
-	function update($table,$field,$condition){
+	function update($table,$field,$condition)
+	{
 		$sql="UPDATE $table SET $field WHERE $condition";
 		$this->con->query($sql);
 	}
-	function __destruct(){
+	function __destruct()
+	{
 		$this->con->close();
 	}
 

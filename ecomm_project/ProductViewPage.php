@@ -1,4 +1,4 @@
-
+`
 <?php
 //include('Helper.php');
 
@@ -15,8 +15,10 @@ $tbl_name="product_details";		//your table name
 	   If you have a WHERE clause in your query, make sure you mirror it here.
 	*/
 	$query =$helper->read_all("COUNT(*)","product_details");
-	if(is_array($query)){
-		foreach($query as $row){
+	if(is_array($query))
+	{
+		foreach($query as $row)
+		{
 	       $total_pages = $row['COUNT(*)'];
 		    
 		   
@@ -52,8 +54,10 @@ $tbl_name="product_details";		//your table name
 	/* Get data. */
 	$sql =$helper_page->read_page("*","product_details","LIMIT $start,$limit");
 	
-	if(is_array($sql)){
-		foreach($sql as $row){
+	if(is_array($sql))
+	{
+		foreach($sql as $row)
+		{
 	      $product_id=$row['product_id'];
 							
 							
@@ -95,7 +99,8 @@ $tbl_name="product_details";		//your table name
 		We're actually saving the code to a variable in case we want to draw it more than once.
 	*/
 	$pagination = "";
-	if($lastpage > 1){	
+	if($lastpage > 1)
+	{	
 		$pagination .= "
 		<center>
 		<div class=\"pagination\">";
@@ -106,18 +111,23 @@ $tbl_name="product_details";		//your table name
 			$pagination.= "<span class=\"disabled\">previous</span>";	
 		
 		//pages	
-		if ($lastpage < 7 + ($adjacents * 2))	//not enough pages to bother breaking it up{	
-			for ($counter = 1; $counter <= $lastpage; $counter++){
+		if ($lastpage < 7 + ($adjacents * 2))	//not enough pages to bother breaking it up
+		{	
+			for ($counter = 1; $counter <= $lastpage; $counter++)
+			{
 				if ($counter == $page)
 					$pagination.= "<span class=\"current\">$counter</span>";
 				else
 					$pagination.= "<a href=\"$targetpage?page=$counter\">$counter</a>";					
 			}
 		}
-		elseif($lastpage > 5 + ($adjacents * 2))	//enough pages to hide some{
+		elseif($lastpage > 5 + ($adjacents * 2))	//enough pages to hide some
+		{
 			//close to beginning; only hide later pages
-			if($page < 1 + ($adjacents * 2)){
-				for ($counter = 1; $counter < 4 + ($adjacents * 2); $counter++){
+			if($page < 1 + ($adjacents * 2))		
+			{
+				for ($counter = 1; $counter < 4 + ($adjacents * 2); $counter++)
+				{
 					if ($counter == $page)
 						$pagination.= "<span class=\"current\">$counter</span>";
 					else
@@ -128,11 +138,13 @@ $tbl_name="product_details";		//your table name
 				$pagination.= "<a href=\"$targetpage?page=$lastpage\">$lastpage</a>";		
 			}
 			//in middle; hide some front and some back
-			elseif($lastpage - ($adjacents * 2) > $page && $page > ($adjacents * 2)){
+			elseif($lastpage - ($adjacents * 2) > $page && $page > ($adjacents * 2))
+			{
 				$pagination.= "<a href=\"$targetpage?page=1\">1</a>";
 				$pagination.= "<a href=\"$targetpage?page=2\">2</a>";
 				$pagination.= "...";
-				for ($counter = $page - $adjacents; $counter <= $page + $adjacents; $counter++){
+				for ($counter = $page - $adjacents; $counter <= $page + $adjacents; $counter++)
+				{
 					if ($counter == $page)
 						$pagination.= "<span class=\"current\">$counter</span>";
 					else
@@ -143,11 +155,13 @@ $tbl_name="product_details";		//your table name
 				$pagination.= "<a href=\"$targetpage?page=$lastpage\">$lastpage</a>";		
 			}
 			//close to end; only hide early pages
-			else{
+			else
+			{
 				$pagination.= "<a href=\"$targetpage?page=1\">1</a>";
 				$pagination.= "<a href=\"$targetpage?page=2\">2</a>";
 				$pagination.= "...";
-				for ($counter = $lastpage - (2 + ($adjacents * 2)); $counter <= $lastpage; $counter++){
+				for ($counter = $lastpage - (2 + ($adjacents * 2)); $counter <= $lastpage; $counter++)
+				{
 					if ($counter == $page)
 						$pagination.= "<span class=\"current\">$counter</span>";
 					else
