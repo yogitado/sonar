@@ -17,7 +17,6 @@
 <?php
 include "Helper.php";
 $var=$_SESSION['user'];
-#var_dump($var);
 $obj = new Helper("ecomm");
 $field="user_id,mobile,address,city,zip";
 $table="user_details";
@@ -29,9 +28,7 @@ $record=$obj->read_record($field,$table,$condition);
 	
 	$arra=array(explode(";",$_SESSION['key']));
 echo '<tr>';
- foreach ($arra as $booking) 
- {
-  #print_r($booking);
+ foreach ($arra as $booking){
   $temp=$booking;
   
   
@@ -39,25 +36,20 @@ echo '<tr>';
   $temp=explode(",",$a);
 
 	$cnt=0;
-     foreach ($temp as $booking2) 
-	 {
+     foreach ($temp as $booking2){
 	 
 	 $cnt++;
 
-		if($cnt==5)
-		{
+		if($cnt==5){
 		echo "<td>";
 		echo '<img src="'.$booking2.'" alt="images" >';
 		echo "</td>";
-		
 		}
-		else
-		{		
+		else{		
 		echo "<td>".$booking2."</td>";
 		}	
 			
-		if($cnt==6)
-		{
+		if($cnt==6){
 		echo "</tr>";
 		echo "<tr>";
 		$cnt=0;
@@ -78,24 +70,9 @@ echo '<tr>';
 
 <?php
 
-#echo "<pre>";
-
-
-/*foreach($record as $key => $element)
-{
+foreach($record as $key ){
     
-    foreach($element as $subKey => $subElement)
-	{
-        echo "$subKey"."=". "$subElement";
-		echo "</br>";
-    }
-    
-}*/
-foreach($record as $key )
-{
-    
-    foreach($key as $subElement)
-	{
+    foreach($key as $subElement){
         echo  "$subElement";
 		echo "</br>";
     }

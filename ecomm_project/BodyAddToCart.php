@@ -21,18 +21,12 @@
   </thead>
 
   
-	<?php
-		#session_start();
+<?php
+		
 		$var=$_REQUEST["key"];
 		
 		$_SESSION['key']=$var;
 		$price=0;
-
-	#print_r($_POST);
-
-	
-	#print_r ($var);
-	
 	
 	$arra=[];
 	
@@ -47,48 +41,32 @@
 
   
  echo '<tr>';
- foreach ($arra as $booking) 
- {
-  #print_r($booking);
+ foreach ($arra as $booking) {
   $temp=$booking;
-  
-  
   $a=implode(",",$temp);
   $temp=explode(",",$a);
   
- # print_r($temp);
-  
 	$cnt=0;
-     foreach ($temp as $booking2) 
-	 {
+     foreach ($temp as $booking2) {
 	 
 	 $cnt++;
-	 #print_r($booking2);
-        
-		
-		#echo $cnt;
-	
-		if($cnt==3)
-		{
+		if($cnt==3){
 			$price+=$booking2;
 		}
 		
 		
 		
-		if($cnt==5)
-		{
+		if($cnt==5){
 		echo "<td>";
 		echo '<img src="'.$booking2.'" alt="images" >';
 		echo "</td>";
 		
 		}
-		else
-		{		
+		else{		
 		echo "<td>".$booking2."</td>";
 		}	
 			
-		if($cnt==6)
-		{
+		if($cnt==6){
 		echo "</tr>";
 		echo "<tr>";
 		$cnt=0;
@@ -98,11 +76,7 @@
 	}
 	
 }
-	
 	echo "</tr>";
-  
-	
-		//session_destroy();
 	
 	
 ?>
@@ -112,8 +86,6 @@
 <td><h4 style="color:blue;text-align:center"><?php  echo $price;?></h4></td>
 </tr>
 </table>
-
-<!-- <form action="OrderSummeryPageIncluded.php" method="POST"> -->
 <form action="Summary.php" method="POST">
   <input type="submit" value="Submit"/>
   <input type="button" value="Cancel"/>
