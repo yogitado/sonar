@@ -19,8 +19,7 @@ $product_id=$_REQUEST['update'];
 <b>Price:  </b>      <input type="text" name="price" id="price"  value="<?php  echo $row['price']; ?>" /></br>
 <b>Image Name: </b>  <input type="text" name="image_name" id="in"  value="<?php echo  $row['image_name']; ?>" /></br>
 <b>Image Path: </b>  <input type="file" name="image_path"  value="<?php echo $row['image_path']; ?>">
-<!--<b>Description : </b><textarea name="description" rows="10" cols="25" value="<?php echo $row['description']; ?>"></textarea></br>-->
-<b>Description: </b> <textarea rows="10" cols="25"name="description" value="<?php echo $row['description']; ?>"></textarea></br>
+<b>Description: </b> <input type="text" name="description" value="<?php echo $row['description']; ?>" style="height:50px;width:330px"></br>
 <?php
 }
 }

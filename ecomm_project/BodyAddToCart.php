@@ -87,7 +87,7 @@
 </tr>
 </table>
 <form action="Summary.php" method="POST">
-  <input type="submit" value="Submit"/>
+  <input type="submit" value="Confirm Order"/>
   <input type="button" value="Cancel"/>
  
 </form>

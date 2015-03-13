@@ -71,7 +71,11 @@ echo '<tr>';
 <?php
 
 foreach($record as $key ){
-    
+	session_start();
+	//print_r($record);
+    $_SESSION["user_details_id"]= $key['user_id'];
+	
+	//echo  $_SESSION["user_details_id"];
     foreach($key as $subElement){
         echo  "$subElement";
 		echo "</br>";

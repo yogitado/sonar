@@ -2,7 +2,7 @@
 
 
 include "html/HeaderHtml.html";
-include "html/Address.html";
+include "Address.php";
 include "html/FooterHtml.html";
 
 ?>
