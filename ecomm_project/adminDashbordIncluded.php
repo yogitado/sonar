@@ -9,4 +9,3 @@ include "adminBodyContent.php";
 include "html/adminNavigation.html";
 echo "</div>";
 ?>
-
