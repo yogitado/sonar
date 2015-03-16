@@ -23,9 +23,9 @@ $cnt=0;
 		}
 		if ($cnt==6) {
 		$values="'$user','$prod','$price'";
-		$result=$helperObj->insert($table,$field,$values);
+		$result=$helperObj->insert($table, $field, $values);
 		if ($result) {
-		header( "location:ThankyouPageIncluded.php");
+		header("location:ThankyouPageIncluded.php");
 		if ($result) {
         echo "THANK YOU...VISIT AGAIN...!!!   ";
         echo "<br>";
