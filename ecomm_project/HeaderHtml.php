@@ -93,74 +93,6 @@ function ValidateEmail(mail)
 		
 
 
-
-	<!--   <script src="../ecomm_project/js/CheckboxId.js"></script>
-	
-	  
--->
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
   <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -234,9 +166,7 @@ function ValidateEmail(mail)
             <li><a href="AboutusCustIncluded.php"> About Us</a></li>
           			
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
+          
 		  
 		  
 		  
@@ -301,7 +231,7 @@ function ValidateEmail(mail)
   <button type="button"  class="btn btn-default">Default</button>
   <button type="button" id="button_home"class="btn btn-primary">Home</button>
   <button type="button" id="button_login" class="btn btn-success">Login</button>
-  <button type="button" id="button_signup"  class="btn btn-info">Signup</button>
+  <button type="button" id="button_signup"  class="btn btn-info">Sign Up</button>
   
   <button type="button" id="button_logout" class="btn btn-danger">Logout</button>
      
