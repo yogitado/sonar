@@ -58,7 +58,6 @@ class Product
 	$product_id=$_REQUEST['del'];
 	/****************************For Update Record***********************/
 	$product_id1=$_REQUEST['product_id'];
-	//echo $product_id1;
 	$product_name1=$_REQUEST['product_name'];
 	$price1=$_REQUEST['price'];
 	$image_name1=$_REQUEST['image_name'];
@@ -95,7 +94,5 @@ case "view_single":
     break;
 default:
     echo "<H3 color='red'>Invalid Option Please Try again!</h3>";
-
 }
-
 ?>

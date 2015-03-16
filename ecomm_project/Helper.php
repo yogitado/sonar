@@ -1,21 +1,11 @@
 <?php
 include('config1.php');
-
-
 class Helper
 {
 	public $con;
-/*	private $host="localhost"; //Your host name
-	private $username="root"; // DB User Name
-	private $password="";//DB pasword
-	private $port=""; // DB Port
-	*/
 	function __construct($databasename)
 	{
-		//$this->con=new mysqli("$this->host","$this->username","$this->password",$databasename);
-		
 		$this->con=new mysqli(Config::HOST,Config::USER,Config::PASSWORD,$databasename);
-		
 	}
 	/********Insert Function**************/
 	function insert($table,$field,$values)
@@ -85,7 +75,6 @@ class Helper
 	{
 		$this->con->close();
 	}
-
 }
 $helper=new Helper("ecomm");
 ?>

@@ -1,9 +1,9 @@
 <?php
 // Inialize session
-  session_start();
+session_start();
 
 // Delete certain session
-  unset($_SESSION['name']);
+unset($_SESSION['name']);
   
 header("Location: adminindex.php");
 
