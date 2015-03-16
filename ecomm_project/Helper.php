@@ -30,7 +30,7 @@ class Helper
 	{
 		$sql="SELECT $field FROM $table WHERE $condition";
 		$result=$this->con->query($sql) or die($this->con->error);
-		var_dump($sql);
+		//var_dump($sql);
 		if($result->num_rows==0)
 		{
 			return "No rows found";

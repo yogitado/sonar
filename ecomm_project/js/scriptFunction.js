@@ -11,7 +11,6 @@ function update_product(value)
 	}
 function delete_user(value)
 	{
-		alert(value);
 		window.location="delete_query.php?delete="+value;
 	}
 function newDoc()

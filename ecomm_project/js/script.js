@@ -7,6 +7,5 @@ function delete_product(value)
 	}
 function update_product(value)
 	{
-		alert(value);
 		window.location="fetch_query.php?update="+value;
 	}

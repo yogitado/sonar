@@ -57,7 +57,8 @@ echo ' <tbody>';
 	}
 	echo '</tbody>';
 	echo ' </table> ';
-	echo '<input type="button" name="cartarr" id="submitCart" value="Add To Cart">';
+	echo '<center><button type="button" id="submitCart" class="btn btn-info" name="cartarr">Add To Cart</button></center>';
+	//echo '<input type="button" name="cartarr" id="submitCart" value="Add To Cart">';
 	echo '</form>';	
 }
 ?>

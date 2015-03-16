@@ -60,44 +60,31 @@ echo "</tr>";
 ?>
 </table>
 
-<h3>Address details</h3>
-<table border="1" >
+<h3>Address details :</h3>
+<table border="3">
 
 
 <tr>
-<td>Email</td>
-<td><?php echo $_SESSION['email'];?></td>
-</tr>
+<td>&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<?php echo $_SESSION['email'];?>&nbsp;&nbsp;&nbsp;</td>
+</tr> 
 <?php
-
-
-
 foreach($record as $key ){
-	#session_start();
-	//print_r($record);
     $_SESSION["user_details_id"]= $key['user_id'];
-	
-	//echo  $_SESSION["user_details_id"];
-    foreach($key as $subElement=>$val){
-	
-
-	
+    foreach($key as $subElement=>$val){	
 	?>
 		<tr>
-		<td>  <?php echo "$subElement";?> </td>
-        <td>  <?php echo "$val";?> </td>
+		<td>&nbsp;&nbsp;&nbsp;<?php echo "$subElement";?>&nbsp;&nbsp;&nbsp;</td>
+        <td>&nbsp;&nbsp;&nbsp;<?php echo "$val";?>&nbsp;&nbsp;&nbsp;</td>
 		</tr> 
 		<?php
-    }
-    
+    } 
 }
 
 ?>
 </table>
 <form method="POST" action="Validate.php">
-	<input type="submit" name="btn_submit" value="Address" />
-	<input type="submit" name="btn_submit" value="Confirm" />
-	<input type="submit" name="btn_submit" value="Cancel" />
+<input type="submit" name="btn_submit" class="btn btn-info" value="Address" />&nbsp;<input type="submit" name="btn_submit"  class="btn btn-info" value="Confirm" />&nbsp;<input type="submit" name="btn_submit" class="btn btn-info"  value="Cancel" />
 </form>
 	</fieldset>
 </div>
