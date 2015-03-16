@@ -60,24 +60,40 @@ echo "</tr>";
 ?>
 </table>
 
+<h3>Address details</h3>
+<table border="1" >
+
+
+<tr>
+<td>Email</td>
+<td><?php echo $_SESSION['email'];?></td>
+</tr>
 <?php
 
 
+
 foreach($record as $key ){
-	session_start();
+	#session_start();
 	//print_r($record);
     $_SESSION["user_details_id"]= $key['user_id'];
 	
 	//echo  $_SESSION["user_details_id"];
-    foreach($key as $subElement){
-        echo  "$subElement";
-		echo "</br>";
+    foreach($key as $subElement=>$val){
+	
+
+	
+	?>
+		<tr>
+		<td>  <?php echo "$subElement";?> </td>
+        <td>  <?php echo "$val";?> </td>
+		</tr> 
+		<?php
     }
     
 }
 
 ?>
-
+</table>
 <form method="POST" action="Validate.php">
 	<input type="submit" name="btn_submit" value="Address" />
 	<input type="submit" name="btn_submit" value="Confirm" />

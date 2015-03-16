@@ -60,67 +60,14 @@ $(document).ready(function() {
       });
 	
 	
-	
 	 
 	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	  $('#back_to_shopping').click(function(){
-	  
-	  
-	  
-	   
-	
-	
-	
+		$('#cancel_addtoCart').click(function(){
+		window.location="index.php";
 		
       });
 	 
 	 
-	 
-	 
-	 
-	 
-	
-   
-
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-
-	
-	
-	
-	
 	
 	
 	

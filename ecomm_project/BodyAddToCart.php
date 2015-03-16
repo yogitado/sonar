@@ -62,7 +62,7 @@ echo "</tr>";
 <form action="Summary.php" method="POST">
 
   <input type="submit" value="Confirm Order"/>
-  <input type="button" value="Cancel"/>
+  <input type="button" value="Cancel" id="cancel_addtoCart"/>
  
 <!--
 <input type="submit" value="Submit"/>

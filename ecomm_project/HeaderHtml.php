@@ -187,7 +187,7 @@ function ValidateEmail(mail)
           <a class="navbar-brand" href="#">E-Commerce</a>
 		  
 		   <?php
-		#session_start();
+		session_start();
 		$emailid = $_SESSION['email'];
 		
 		#$welcome="Welcome";

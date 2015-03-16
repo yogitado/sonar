@@ -3,13 +3,13 @@ session_start();
 
 if($_REQUEST['btn_submit']=="Address")
 {
-echo "Address";
-header("Location:UpdateAddress.php");
+
+header("Location:updateAddressIncluded.php");
 }
 
 if($_REQUEST['btn_submit']=="Confirm")
 {
-echo "Confirm";
+
 header("Location:Confirm.php");
 }
 
