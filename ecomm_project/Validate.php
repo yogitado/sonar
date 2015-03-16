@@ -4,7 +4,7 @@ session_start();
 if($_REQUEST['btn_submit']=="Address")
 {
 echo "Address";
-header("Location:AddAddressIncluded.php");
+header("Location:UpdateAddress.php");
 }
 
 if($_REQUEST['btn_submit']=="Confirm")

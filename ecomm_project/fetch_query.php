@@ -17,6 +17,7 @@ include "html/adminHeader.html";
  if(is_array($result)){
  foreach($result as $row){
 ?>
+<<<<<<< HEAD
 <input type="hidden" name="product_id" id="pn"  value="<?php echo $row['product_id'];?>" required /></br>
 <b>Product Name: </b><input type="text" name="product_name" id="pn"  value="<?php echo $row['product_name'];?>" required/></br>
 <b>Price:  </b>      <input type="text" name="price" id="price"  value="<?php  echo $row['price']; ?>" required/></br>
@@ -24,6 +25,15 @@ include "html/adminHeader.html";
 <b>Image Path: </b>  <input type="file" name="image_path"  value="<?php echo $row['image_path'];?>" required/>
 <b>Description: </b> <textarea rows="10" cols="25"name="description" required><?php echo $row['description'];?></textarea></br>
 
+=======
+
+<input type="hidden" name="product_id" id="pn"  value="<?php echo $row['product_id'];?>"   required/></br>
+<b>Product Name: </b><input type="text" name="product_name" id="pn"  value="<?php echo $row['product_name'];?>" required /></br>
+<b>Price:  </b>      <input type="text" name="price" id="price"  value="<?php  echo $row['price']; ?>" required /></br>
+<b>Image Name: </b>  <input type="text" name="image_name" id="in"  value="<?php echo  $row['image_name']; ?>" required /></br>
+<b>Image Path: </b>  <input type="file" name="image_path"  value="<?php echo $row['image_path']; ?>" required>
+<b>Description: </b> <input type="text" name="description" value="<?php echo $row['description']; ?>" style="height:50px;width:330px" required></br>
+>>>>>>> d577422b715ae90bd02616a4abd4b5b3b88f64cb
 <?php
 }
 }

@@ -60,8 +60,14 @@ echo "</tr>";
 		</tr>
 </table>
 <form action="Summary.php" method="POST">
+
+  <input type="submit" value="Confirm Order"/>
+  <input type="button" value="Cancel"/>
+ 
+<!--
 <input type="submit" value="Submit"/>
 <input type="button" id="back_to_shopping" value="Back To Shopping" />
+-->
 </form>
 </div>
 </pre>

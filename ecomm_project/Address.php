@@ -1,17 +1,26 @@
-<?php
-	include "Helper.php";
-	session_start();
-	$name=$_SESSION['user'];
-	$mob=$_POST["Mobile"];
-	$addr=$_POST["Address"];
-	$cit=$_POST["State"];
-	$cit=$_POST["City"];
-	$pinno=$_POST["PinCode"];
-	$tableName="user_details";
-	$obj=new Helper("ecomm");
-	$val="'$mob','$addr','$cit','$pinno','$name'";
-	$field="mobile,address,city,zip,user_id";
-	$obj->insert($tableName,$field,$val);
 
-	header("Location:OrderSummaryPageIncluded.php");
-?>
+
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bodyCss.css">
+</head>
+<div id="body">
+<form  action="AddressDetails.php" method="POST" style="text-align: center;font:xx-large;" theme="simple">
+<pre>
+	<b>Full Name : </b><input type="text" name="FullName" id="FullName"></br>
+	<b>Mobile No.: </b><input type="text" name="Mobile" id="Mobile"><br/>
+	<b>Address Details :</b><textarea name="Address" rows="10" cols="30" id="Address"></textarea>
+	<b>State : </b><input type="text" name="State" id="State"><br/>
+	<b>City : </b><input type="text" name="City" id="City"><br/>
+	<b>Pin Code : </b><input type="number" name="PinCode" id="PinCode"><br/>
+	</pre>
+	<input type="submit" value="add detail">
+	
+	
+
+</form>
+</div>
+
+</html>
+
