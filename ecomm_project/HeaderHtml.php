@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ecommerce</title> 
+  <title>Ecommerce</title>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/plug-ins/f2c75b7247b/
 integration/bootstrap/3/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -19,9 +19,9 @@ integration/bootstrap/3/dataTables.bootstrap.css">
 function ValidateEmail(mail)
 {
 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(loginform.email.value))
-  {  
-    return (true)  
-  }  
+  {
+    return (true)
+  }
     alert("You have entered an invalid email address!")
     return (false)
 }
@@ -49,7 +49,7 @@ function myFunction() {
 <script type="text/javascript" src="js/ie10-viewport-bug-workaround.js"></script>
 <script type="text/javascript" src="js/ie-emulation-modes-warning.js"></script>
 <script src="js/ChecboxId.js"></script>
-<script src="js/myjs1.js"></script>		
+<script src="js/myjs1.js"></script>
   <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -64,18 +64,18 @@ function myFunction() {
    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+		  aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">E-Commerce</a>  
+          <a class="navbar-brand" href="#">E-Commerce</a>
 		   <?php
 		session_start();
 		$emailid = $_SESSION['email'];
-		if($emailid)
-		{		
+		if ($emailid) {
 		?>
 		 <h3 ><font class="message" color="white"> <?php echo  $emailid ?></font></h3>
 		<?php
@@ -88,7 +88,7 @@ function myFunction() {
 		<div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.php">HOME</a></li>
-            <li><a href="AboutusCustIncluded.php"> About Us</a></li>	
+            <li><a href="AboutusCustIncluded.php"> About Us</a></li>
           </ul>
         </div>
       </div>
@@ -131,8 +131,8 @@ function myFunction() {
   <button type="button"  class="btn btn-default">Default</button>
   <button type="button" id="button_home"class="btn btn-primary">Home</button>
   <button type="button" id="button_login" class="btn btn-success">Login</button>
-  <button type="button" id="button_signup"  class="btn btn-info">Sign Up</button>  
-  <button type="button" id="button_logout" class="btn btn-danger">Logout</button>    
+  <button type="button" id="button_signup"  class="btn btn-info">Sign Up</button>
+  <button type="button" id="button_logout" class="btn btn-danger">Logout</button>
 </form>
 </div>
 </div>
