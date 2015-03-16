@@ -6,7 +6,7 @@ echo ' <div id="body"> ' ;
 
 $helperObj=new Helper("ecomm");
 $fields="'product_id','product_name','price','image_name','image_path','description'";
-$resultSet=$helperObj->read_all("*","product_details");
+$resultSet=$helperObj->read_all("*", "product_details");
 
 if (is_array($resultSet)) {
 	echo '<form method="POST">';
@@ -50,7 +50,7 @@ echo ' <tbody>';
 		<td width="60" ><b><?=$row['product_name'] ?></b></td>
 		<td width="120" ><?=$row['description'] ?></td>
 <?php
-	echo ' <td width="10"><input type="checkbox" class="items" name="cartarr[]" value="'.implode(",",$row).'"></td> ';
+	echo ' <td width="10"><input type="checkbox" class="items" name="cartarr[]" value="'.implode(",", $row).'"></td> ';
 	echo ' </tr> ';
 	}
 	echo '</tbody>';
