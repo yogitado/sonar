@@ -1,4 +1,4 @@
-<pre>  
+<pre>
 <link rel="stylesheet" type="text/css" href="css/bodyCss.css">
 <div id="body" >
 	<fieldset>
@@ -14,86 +14,54 @@
 		<th>Description </th>
 		</tr>
 	</thead>
-	
 <?php
 include "Helper.php";
-
 $var=$_SESSION['user'];
 $obj = new Helper("ecomm");
 $field="user_id,mobile,address,city,zip";
 $table="user_details";
 $condition="user_id='".$var."'";
-$record=$obj->read_record($field,$table,$condition);
+$record=$obj->read_record($field, $table, $condition);
 $arra=[];
-$arra=array(explode(";",$_SESSION['key']));
+$arra=array(explode(";", $_SESSION['key']));
 
 echo '<tr>';
-foreach ($arra as $booking)
-{
+foreach ($arra as $booking) {
 $temp=$booking;
-$a=implode(",",$temp);
-$temp=explode(",",$a);
+$a=implode(",", $temp);
+$temp=explode(",", $a);
 $cnt=0;
-    foreach ($temp as $booking2)
-	{ 
+    foreach ($temp as $booking2) {
 		$cnt++;
-		if($cnt==5)
-		{
+		if ($cnt==5) {
 			echo "<td>";
 			echo '<img src="'.$booking2.'" alt="images" >';
 			echo "</td>";
-		}
-		else
-		{		
+		} else {
 			echo "<td>".$booking2."</td>";
-		}	
-			
-		if($cnt==6)
-		{
+		}
+		if ($cnt==6) {
 			echo "</tr>";
 			echo "<tr>";
 			$cnt=0;
 		}
-	}	
+	}
 }
 echo "</tr>";
 ?>
 </table>
-
-<h3>Address details</h3>
-<table border="1" >
-
-
-<tr>
-<td>Email</td>
-<td><?php echo $_SESSION['email'];?></td>
-</tr>
 <?php
-
-
-
-foreach($record as $key ){
-	#session_start();
+foreach ($record as $key) {
+	session_start();
 	//print_r($record);
     $_SESSION["user_details_id"]= $key['user_id'];
-	
 	//echo  $_SESSION["user_details_id"];
-    foreach($key as $subElement=>$val){
-	
-
-	
-	?>
-		<tr>
-		<td>  <?php echo "$subElement";?> </td>
-        <td>  <?php echo "$val";?> </td>
-		</tr> 
-		<?php
+    foreach ($key as $subElement) {
+        echo  "$subElement";
+		echo "</br>";
     }
-    
 }
-
 ?>
-</table>
 <form method="POST" action="Validate.php">
 	<input type="submit" name="btn_submit" value="Address" />
 	<input type="submit" name="btn_submit" value="Confirm" />
