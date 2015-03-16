@@ -15,7 +15,7 @@ class Product
     echo 'success';
     header("location:ProductViewPage.php");
 	}
-    function delete_product($tablename,$condition)
+    function delete_product($tablename, $condition)
 	{
     $this->helper->delete($tablename, $condition);
     header("location:ProductViewPage.php");
@@ -45,11 +45,11 @@ class Product
     echo"<p><font size = '5'><font color=\"#e31919\">INSERT TO DATABASE FAILED";
     } else {
     $uploaddir="images/";
-    move_uploaded_file($_FILES["image_path"]["tmp_name"],"$uploaddir" . $_FILES["image_path"]["name"]);
+    move_uploaded_file($_FILES["image_path"]["tmp_name"], "$uploaddir" . $_FILES["image_path"]["name"]);
     echo"<font size = '5'><font color=\"#0CF44A\">SAVED<br>";
     }
     $file="$uploaddir".$_FILES["image_path"]["name"];
-    /************ For deleting Record ***********************/ 
+    /************ For deleting Record ***********************/
 	$product_id=$_REQUEST['del'];
 	/****************************For Update Record***********************/
 	$product_id1=$_REQUEST['product_id'];
@@ -62,18 +62,18 @@ class Product
     echo"<p><font size = '5'><font color=\"#e31919\">INSERT TO DATABASE FAILED";
     } else {
 	$uploaddir="images/";
-    move_uploaded_file($_FILES["image_path"]["tmp_name"],"$uploaddir" . $_FILES["image_path"]["name"]);
+    move_uploaded_file($_FILES["image_path"]["tmp_name"], "$uploaddir" . $_FILES["image_path"]["name"]);
     echo"<font size = '5'><font color=\"#0CF44A\">SAVED<br>";
 	}
     $file1="$uploaddir".$_FILES["image_path"]["name"];
-switch ($_REQUEST['operation']){
+switch ($_REQUEST['operation']) {
 case "add":
-	$product->add_product("product_details", "product_name,price,image_name,image_path,description", 
+	$product->add_product("product_details", "product_name,price,image_name,image_path,description",
 	"'$product_name','$price','$image_name','$file','$description'");
 	break;
 case "update":
-	$product->update_product("product_details", "product_name='$product_name1',price='$price1',image_name='$image_name1',image_path='$file1',description='$description1'",
-"product_id='$product_id1'");
+	$product->update_product("product_details", "product_name='$product_name1',price='$price1',image_name='$image_name1',
+	image_path='$file1',description='$description1'","product_id='$product_id1'");
 	break;
 case "delete_rec":
 	$product->delete_product("product_details", "product_id='$product_id'");
