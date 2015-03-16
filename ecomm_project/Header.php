@@ -15,9 +15,7 @@
             <li><a href="html/AboutUs.html"> About Us</a></li>
             <li><a href="AdminLogout.php"> Log OUT</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-			<input type="text" class="form-control" placeholder="Search...">
-          </form>
+         
         </div>
     </div>
 </nav>
