@@ -1,3 +1,4 @@
+alert("Hello from Script");
 function update_user(value)
 				{
 				

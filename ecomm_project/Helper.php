@@ -68,8 +68,8 @@ class Helper
 	/************Update Function**************/
 	function update($table,$field,$condition)
 	{
-		$sql="UPDATE $table SET $field WHERE $condition";
-		$this->con->query($sql);
+		$sql="UPDATE $table SET $field WHERE $condition"; 
+		$this->con->query($sql); 
 	}
 	function __destruct()
 	{

@@ -14,7 +14,7 @@ class GenericClass{
 		$field="user_id,email_id,password";
 		$table="user";
 
-		$condition=" email_id='$email' AND password='$pass' ";
+		$condition=" email_id='$email' AND password='$pass' AND is_active='1' ";
 		$result=$obj->read_record($field,$table ,$condition);
 
 
