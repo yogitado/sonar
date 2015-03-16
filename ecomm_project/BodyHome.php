@@ -16,7 +16,7 @@ if (is_array($resultSet)) {
     <thead>
         <tr>
             <th width="5%" >No.</th>
-            <th width="35%">Image</th> 
+            <th width="35%">Image</th>
             <th width="10%">Price</th>
 			<th width="15%">Product</th>
             <th width="30%">Description</th>
@@ -26,7 +26,7 @@ if (is_array($resultSet)) {
     <tfoot>
         <tr>
             <th>No.</th>
-            <th>Image</th> 
+            <th>Image</th>
             <th>Price</th>
 			<th>Product</th>
             <th>Description</th>
