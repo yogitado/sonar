@@ -1,5 +1,4 @@
 <pre>
-<link rel="stylesheet" type="text/css" href="css/bodyCss.css">
 <div id="body" >
 	<fieldset>
 	<legend>Order summery page</legend>
@@ -72,6 +71,7 @@ foreach($record as $key ){
     } 
 }
 ?>
+</table>
 <form method="POST" action="Validate.php">
 <input type="submit" name="btn_submit" class="btn btn-info" value="Address" />&nbsp;<input type="submit" name="btn_submit"  class="btn btn-info" value="Confirm" />&nbsp;<input type="submit" name="btn_submit" class="btn btn-info"  value="Cancel" />
 </form>
