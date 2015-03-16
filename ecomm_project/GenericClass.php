@@ -25,7 +25,8 @@ class GenericClass
 			header("Location: LoginPageIncluded.php");
 		}
     }
-	public function checkFunctionSummery($email, $pass){
+	public function checkFunctionSummery($email, $pass)
+	{
 		$obj=new Helper("ecomm");
 		if (isset($email) && isset($pass)) {
 		$field="user_id";
