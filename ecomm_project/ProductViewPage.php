@@ -4,26 +4,22 @@ include "html/adminHeader.html";
 $tbl_name="product_details";
 $adjacents = 3;
 $query = $helper->read_all("COUNT(*)", "product_details");
-    if (is_array($query))
-	{
-       foreach ($query as $row)
-	   {
+    if (is_array($query)) {
+       foreach ($query as $row) {
        $total_pages = $row['COUNT(*)'];
        }
     }
 //your file name  (the name of this file)
 $targetpage = "ProductViewPage.php";
 //how many items to show per page
-$limit = 3; 						
+$limit = 3;
 $page = $_REQUEST['page'];
-if ($page)
-{
+if ($page) {
 //first item to display on this page
 $start = ($page - 1) * $limit;
-} else
-{
+} else {
 //if no page var is given, set start to 0
-$start = 0;				
+$start = 0;
 }
 ?>
 <div class="container">
@@ -43,10 +39,8 @@ echo "<table align='left' width=90% border='1'class='table table-striped'>";
 </tr>
 <?php
 $sql =$helper_page->read_page("*", "product_details", "LIMIT $start, $limit");
-   if (is_array($sql))
-   {
-      foreach ($sql as $row)
-	  {
+if (is_array($sql)) {
+      foreach ($sql as $row) {
       $product_id=$row['product_id'];
 ?>
        <td width="80" >
@@ -67,50 +61,51 @@ $sql =$helper_page->read_page("*", "product_details", "LIMIT $start, $limit");
 echo "</table>";
    }
 /* Setup page vars for display. */
-if ($page == 0)
+if ($page == 0) {
 $page = 1;
-$prev = $page - 1;//previous page is page - 1
+}
+//previous page is page - 1
+$prev = $page - 1;
 //next page is page + 1
 $next = $page + 1;
 //lastpage is = total pages / items per page, rounded up.					
 $lastpage = ceil($total_pages/$limit);
-$lpm1 = $lastpage - 1;	//last page minus 1
+//last page minus 1
+$lpm1 = $lastpage - 1;
 /* Now we apply our rules and draw the pagination object.
 We're actually saving the code to a variable in case we want to draw it more than once. */
 $pagination = "";
-if ($lastpage > 1)
-{
+if ($lastpage > 1) {
 $pagination .= "
 <center>
 <div class=\"pagination\">";
 //previous button
-if ($page > 1)
+if ($page > 1) {
 $pagination.= "<a href=\"$targetpage?page=$prev\">previous</a>";
-else
+} else {
 $pagination.= "<span class=\"disabled\">previous</span>";
+}
 //pages
-if ($lastpage < 7 + ($adjacents * 2)) 
-{
+if ($lastpage < 7 + ($adjacents * 2)) {
 //not enough pages to bother breaking it up
-for ($counter = 1; $counter <= $lastpage; $counter++)
-{
-if ($counter == $page)
+for ($counter = 1; $counter <= $lastpage; $counter++) {
+if ($counter == $page) {
 $pagination.= "<span class=\"current\">$counter</span>";
-else
+} else {
 $pagination.= "<a href=\"$targetpage?page=$counter\">$counter</a>";
 }
 }
-elseif ($lastpage > 5 + ($adjacents * 2))
-{
+}
+elseif ($lastpage > 5 + ($adjacents * 2)) {
 //enough pages to hide some
 //close to beginning; only hide later pages
 if ($page < 1 + ($adjacents * 2)) {
-for ($counter = 1; $counter < 4 + ($adjacents * 2); $counter++)
-{
-if ($counter == $page)
+for ($counter = 1; $counter < 4 + ($adjacents * 2); $counter++) {
+if ($counter == $page) {
 $pagination.= "<span class=\"current\">$counter</span>";
-else
+} else {
 $pagination.= "<a href=\"$targetpage?page=$counter\">$counter</a>";
+}
 }
 $pagination.= "...";
 $pagination.= "<a href=\"$targetpage?page=$lpm1\">$lpm1</a>";
@@ -122,10 +117,11 @@ $pagination.= "<a href=\"$targetpage?page=1\">1</a>";
 $pagination.= "<a href=\"$targetpage?page=2\">2</a>";
 $pagination.= "...";
 for ($counter = $page - $adjacents; $counter <= $page + $adjacents; $counter++) {
-if ($counter == $page)
+if ($counter == $page) {
 $pagination.= "<span class=\"current\">$counter</span>";
-else
+} else {
 $pagination.= "<a href=\"$targetpage?page=$counter\">$counter</a>";
+}
 }
 $pagination.= "...";
 $pagination.= "<a href=\"$targetpage?page=$lpm1\">$lpm1</a>";
@@ -136,19 +132,21 @@ $pagination.= "<a href=\"$targetpage?page=1\">1</a>";
 $pagination.= "<a href=\"$targetpage?page=2\">2</a>";
 $pagination.= "...";
 for ($counter = $lastpage - (2 + ($adjacents * 2)); $counter <= $lastpage; $counter++) {
-if ($counter == $page)
+if ($counter == $page) {
 $pagination.= "<span class=\"current\">$counter</span>";
-else
+} else {
 $pagination.= "<a href=\"$targetpage?page=$counter\">$counter</a>";
 }
 }
 }
+}
 //next button
-if ($page < $counter - 1)
+if ($page < $counter - 1) {
 $pagination.= "<a href=\"$targetpage?page=$next\">next </a>";
-else
+} else {
 $pagination.= "<span class=\"disabled\">next</span>";
 $pagination.= "</div></center> </div>";
+}
 }
 ?>
 </div>
