@@ -10,7 +10,7 @@ class Helper
   *@access private
   *@var string
   */
-	public $con;	
+   public $con;
 	/**
 	*Class constructor ,establishes connection with database
 	*$param string $databasename
@@ -110,11 +110,11 @@ class Helper
     */
 	function update($table, $field, $condition)
 	{
-		$sql="UPDATE $table SET $field WHERE $condition"; 
-		$this->con->query($sql); 
+		$sql="UPDATE $table SET $field WHERE $condition";
+		$this->con->query($sql);
 	}
 	/**
-	* Class destructor which closes connection 
+	* Class destructor which closes connection
 	*/
 	function __destruct()
 	{
