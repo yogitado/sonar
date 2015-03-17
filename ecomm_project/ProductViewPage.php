@@ -51,8 +51,8 @@ if (is_array($sql)) {
        <td width="80" ><?=$row['description'] ?>        </td>
        <td width="30" ><?=$row['product_id'] ?>         </td>
        <td width="80" >
-       <input type="button" value="DELETE" onClick='delete_product("<?=$row['product_id'] ?>")'/>
-       <input type="button" value="UPDATE" onClick='update_product("<?=$row['product_id'] ?>")'/>
+       <input type="button" value="Delete" class="btn btn-danger" onClick='delete_product("<?=$row['product_id'] ?>")'/>
+       <input type="button" value="Update" class="btn btn-info" onClick='update_product("<?=$row['product_id'] ?>")'/>
        </td>
        <input type="hidden" name="page" value="2" />	<br/>
        </tr>
