@@ -4,8 +4,7 @@ include('config1.php');
 * A Helper class which consists all the functions required for CRUD operations
 */
 
-class Helper
-{
+class Helper{
   /**
   *Sample class variables
   *@access private
