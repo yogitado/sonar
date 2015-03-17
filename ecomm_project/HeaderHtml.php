@@ -40,6 +40,17 @@ function myFunction() {
 	     }
 	 }
 	</script>
+	
+	<script type="text/javascript">
+	
+	function myFunction2() {
+	     alert("from fun2");
+		         document.getElementById("errror_message2").style.color="RED";
+		         document.getElementById("errror_message2").innerHTML="password not match";
+	         
+	     }
+	 
+	 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
