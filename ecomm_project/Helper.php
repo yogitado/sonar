@@ -5,66 +5,55 @@ class Helper
 	public $con;
 	function __construct($databasename)
 	{
-		$this->con=new mysqli(Config::HOST,Config::USER,Config::PASSWORD,$databasename);
+		$this->con=new mysqli(Config::HOST, Config::USER, Config::PASSWORD, $databasename);
 	}
 	/********Insert Function**************/
-	function insert($table,$field,$values)
+	function insert($table, $field, $values)
 	{
 		$sql="INSERT INTO $table($field)VALUES($values)";
 		$this->con->query($sql)or die($this->con->error);
 		return 1;
 	}
-	function insert_all($table,$values)
+	function insert_all($table, $values)
 	{
 		$sql="INSERT INTO $table VALUES($values)";
 		$this->con->query($sql)or die($this->con->error);
 	}
 	/*************Delete Function ***************/
-	function delete($table,$condition)
+	function delete($table, $condition)
 	{
 		$sql="DELETE FROM $table WHERE $condition";
 		$this->con->query($sql);
 	}
 	/************Select Function**************/
-	function read_record($field,$table,$condition)
+	function read_record($field, $table, $condition)
 	{
 		$sql="SELECT $field FROM $table WHERE $condition";
 		$result=$this->con->query($sql) or die($this->con->error);
 		//var_dump($sql);
-		if($result->num_rows==0)
-		{
+		if ($result->num_rows==0) {
 			return "No rows found";
-		}
-		else
-		{
-			while($row=$result->fetch_array(MYSQL_ASSOC))
-			{
+		} else {
+			while ($row=$result->fetch_array(MYSQL_ASSOC)) {
 				$data[]=$row;
 			}
-			 
 			return $data;
 		}
 	}
 	/****** Read all record*********************/
-	function read_all($field,$table)
+	function read_all($field, $table)
 	{
 		$sql="SELECT $field FROM $table";
 		$result=$this->con->query($sql) or die($this->con->error);
-		if($result->num_rows==0)
-		{
+		if ($result->num_rows==0) {
 			return "No rows found";
-		}
-		else
-		{
-			while($row=$result->fetch_array(MYSQL_ASSOC))
-			{
+		} else {
+			while ($row=$result->fetch_array(MYSQL_ASSOC)) {
 				$data[]=$row;
 			}
-			
 			return $data;
 		}
 	}
-
 	/************Update Function**************/
 	function update($table,$field,$condition)
 	{
