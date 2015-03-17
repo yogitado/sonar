@@ -5,7 +5,7 @@ $email_id=$_SESSION['email'];
  $result=$helper->read_record("*","user_details","user_id in(select user_id from user where email_id='$email_id' )");
  if(is_array($result)){
  
- echo "in if";exit;
+ 
  foreach($result as $row){
 
 ?>
