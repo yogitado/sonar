@@ -1,9 +1,24 @@
 <?php
 session_start();
+/**
+ * A Generic class which defines two methods for checking login credentials and Items in the cart 
+ */
 class GenericClass
 {
-	 public function checFunLogin($email, $pass)
+    
+   	/**
+    *Function returns nothing, fetches email and password record from database and checks user.
+    *@param string $email
+    *@param string $pass
+	*@var object
+    *@name $field
+    *@name $table
+    */
+	public function checFunLogin($email, $pass)
 	 {
+		/**
+        *@var array
+        */
 		$obj=new Helper("ecomm");
 		$field="user_id, email_id, password";
 		$table="user";
@@ -25,6 +40,16 @@ class GenericClass
 			header("Location: LoginPageIncluded.php");
 		}
     }
+	
+	/**
+    *Function returns nothing ,checks whether user has added anything in cart or not.
+    *@param string $email
+    *@param string $pass
+	*@var object
+    *@name $field
+    *@name $table
+    */
+	
 	public function checkFunctionSummery($email, $pass)
 	{
 		$obj=new Helper("ecomm");
