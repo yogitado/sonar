@@ -14,33 +14,27 @@ class Product
   *@var string
   */
 	private $helper;
-	function __construct($helper)
-    {
+	function __construct($helper) {
 	echo "In constructor";
     $this->helper = $helper;
     }
-	public function add_product($tablename, $user_fields, $user_values)
-    {
+	public function add_product($tablename, $user_fields, $user_values) {
     $this->helper->insert($tablename, $user_fields, $user_values);
     echo 'success';
     header("location:ProductViewPage.php");
 	}
-    public function delete_product($tablename, $condition)
-	{
+    public function delete_product($tablename, $condition) {
     $this->helper->delete($tablename, $condition);
     header("location:ProductViewPage.php");
 	}
-    public function update_product($tablename, $field, $condition)
-	{
+    public function update_product($tablename, $field, $condition) {
     $this->helper->update($tablename, $field, $condition);
     header("location:ProductViewPage.php");
 	}
-    public function view_product($product_list, $table)
-	{
+    public function view_product($product_list, $table) {
     $helper->read_all($product_list, $table);
     }
-	public function view_single_product($product_list, $table, $condition)
-	{
+	public function view_single_product($product_list, $table, $condition) {
     $helper->read_record($product_list, $table, $condition);
 	}
 }
@@ -128,4 +122,3 @@ case "view_single":
 default:
     echo "<H3 color='red'>Invalid Option Please Try again!</h3>";
 }
-?>
