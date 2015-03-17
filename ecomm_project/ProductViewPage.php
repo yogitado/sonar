@@ -1,9 +1,9 @@
 <?php
-include('Helper_page.php');
-include "html/adminHeader.html";
+include_once('Helper_page.php');
+include_once "html/adminHeader.html";
 $tbl_name="product_details";
 $adjacents = 3;
-$query = $helper->read_all("COUNT(*)", "product_details");
+$query = $helper->read_all("COUNT(*)", "$tbl_name");
     if (is_array($query)) {
        foreach ($query as $row) {
        $total_pages = $row['COUNT(*)'];
@@ -38,7 +38,7 @@ echo "<table align='left' width=90% border='1'class='table table-striped'>";
 <br/>
 </tr>
 <?php
-$sql =$helper_page->read_page("*", "product_details", "LIMIT $start, $limit");
+$sql =$helper_page->read_page("*", "$tbl_name", "LIMIT $start, $limit");
 if (is_array($sql)) {
       foreach ($sql as $row) {
       $product_id=$row['product_id'];
@@ -51,8 +51,8 @@ if (is_array($sql)) {
        <td width="80" ><?=$row['description'] ?>        </td>
        <td width="30" ><?=$row['product_id'] ?>         </td>
        <td width="80" >
-       <input type="button" value="Delete" class="btn btn-danger" onClick='delete_product("<?=$row['product_id'] ?>")'/>
-       <input type="button" value="Update" class="btn btn-info" onClick='update_product("<?=$row['product_id'] ?>")'/>
+       <input type="button" value="DELETE" onClick='delete_product("<?=$row['product_id'] ?>")'/>
+       <input type="button" value="UPDATE" onClick='update_product("<?=$row['product_id'] ?>")'/>
        </td>
        <input type="hidden" name="page" value="2" />	<br/>
        </tr>
@@ -68,7 +68,7 @@ $page = 1;
 $prev = $page - 1;
 //next page is page + 1
 $next = $page + 1;
-//lastpage is = total pages / items per page, rounded up.					
+//lastpage is = total pages / items per page, rounded up.			
 $lastpage = ceil($total_pages/$limit);
 //last page minus 1
 $lpm1 = $lastpage - 1;
@@ -153,5 +153,5 @@ $pagination.= "</div></center> </div>";
 </div>
 <?=$pagination?>
 <?php
-include "html/adminNavigation.html";
+include_once "html/adminNavigation.html";
 ?>
