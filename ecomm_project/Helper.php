@@ -16,7 +16,7 @@ class Helper
 	*Class constructor ,establishes connection with database
 	*$param string $databasename
 	*/
-	function __construct($databasename)
+	public function __construct($databasename)
 	{
 		$this->con=new mysqli(Config::HOST, Config::USER, Config::PASSWORD, $databasename);
 	}
@@ -28,7 +28,7 @@ class Helper
     *@param string $values
     *@return number
 	*/
-	function insert($table, $field, $values)
+	public function insert($table, $field, $values)
 	{
 		$sql="INSERT INTO $table($field)VALUES($values)";
 		$this->con->query($sql)or die($this->con->error);
@@ -40,7 +40,7 @@ class Helper
     *@param string $values
 	*@name sql
     */
-	function insert_all($table, $values)
+	public function insert_all($table, $values)
 	{
 		$sql="INSERT INTO $table VALUES($values)";
 		$this->con->query($sql)or die($this->con->error);
@@ -52,7 +52,7 @@ class Helper
     *@param string $condition
 	*@name sql
     */
-	function delete($table, $condition)
+	public function delete($table, $condition)
 	{
 		$sql="DELETE FROM $table WHERE $condition";
 		$this->con->query($sql);
@@ -66,7 +66,7 @@ class Helper
 	*@var array
 	*@name sql
     */
-	function read_record($field, $table, $condition)
+	public function read_record($field, $table, $condition)
 	{
 		$sql="SELECT $field FROM $table WHERE $condition";
 		$result=$this->con->query($sql) or die($this->con->error);
@@ -88,7 +88,7 @@ class Helper
 	*@name sql
 	*@rertun $data
     */
-	function read_all($field, $table)
+	public function read_all($field, $table)
 	{
 		$sql="SELECT $field FROM $table";
 		$result=$this->con->query($sql) or die($this->con->error);
@@ -109,7 +109,7 @@ class Helper
 	*@param string condition
 	*@name sql
     */
-	function update($table, $field, $condition)
+	public function update($table, $field, $condition)
 	{
 		$sql="UPDATE $table SET $field WHERE $condition";
 		$this->con->query($sql);
@@ -117,7 +117,7 @@ class Helper
 	/**
 	* Class destructor which closes connection
 	*/
-	function __destruct()
+	public function __destruct()
 	{
 		$this->con->close();
 	}
