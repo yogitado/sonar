@@ -1,13 +1,5 @@
 $(document).ready(function() {
-
-
-
-
     $('#example').dataTable();
-	
-	
-	
-	
 		 x = $(".message").text().trim(); 
     if ( !!x) { 
         $("#button_login").hide(); 
@@ -20,26 +12,17 @@ $(document).ready(function() {
 	
 	
 	    $('#button_home').click(function(){
-		alert('button clicked');
-		console.log("button click");
-		
 		window.location="../ecomm_project/index.php";
-		
       });
-			//
    
 	
 	 $('#button_login').click(function(){
-		alert('button clicked');
-		console.log("button click");
 		
 		window.location="../ecomm_project/LoginPageincluded.php";
 		
       });
 	  
 	   $('#button_signup').click(function(){
-		alert('button clicked');
-		console.log("button click");
 		
 		window.location="../ecomm_project/SignupPageincluded.php";
 		
@@ -47,8 +30,6 @@ $(document).ready(function() {
 	
 	
 	 $('#button_logout').click(function(){
-		alert('button clicked');
-		console.log("button click");
 		
 		window.location="../ecomm_project/SignOutPageincluded.php";
 		
@@ -59,18 +40,7 @@ $(document).ready(function() {
 		
       });
 	
-	
-	 
-	 
 		$('#cancel_addtoCart').click(function(){
 		window.location="index.php";
-		
       });
-	 
-	 
-	
-	
-	
-	
 } );
-

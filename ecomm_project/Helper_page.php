@@ -13,6 +13,7 @@ function __construct($databasename)
 	{
 		parent::__construct($databasename);
 	}
+<<<<<<< HEAD
 	/**
 	*Fetches all values from the table in database with a condition
 	*
@@ -27,17 +28,16 @@ function __construct($databasename)
 	*@return $data
 	*/
 function read_page($field,$table ,$condition)
+=======
+function read_page($field, $table ,$condition)
+>>>>>>> c2ad804367ee24f5114ad0db292b4b83f1b6072b
 	{
 		$sql="SELECT $field FROM $table $condition";
 		$result=$this->con->query($sql) or die($this->con->error);
-		if($result->num_rows==0)
-		{
+		if ($result->num_rows==0) {
 			return "No rows found";
-			}
-			else
-			{
-				while($row=$result->fetch_array(MYSQL_ASSOC))
-				{
+			} else {
+				while ($row=$result->fetch_array(MYSQL_ASSOC)) {
 					$data[]=$row;
 					}
 					return $data;
