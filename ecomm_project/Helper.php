@@ -1,10 +1,10 @@
 <?php
-include('config1.php');
+include_once('config1.php');
 /**
 * A Helper class which consists all the functions required for CRUD operations
 */
-
-class Helper {
+class Helper
+{
   /**
   *Sample class variables
   *@access private
@@ -15,8 +15,7 @@ class Helper {
 	*Class constructor ,establishes connection with database
 	*$param string $databasename
 	*/
-	public function __construct($databasename)
-	{
+	public function __construct($databasename) {
 		$this->con=new mysqli(Config::HOST, Config::USER, Config::PASSWORD, $databasename);
 	}
 	/********Insert Function**************/
@@ -27,8 +26,7 @@ class Helper {
     *@param string $values
     *@return number
 	*/
-	public function insert($table, $field, $values)
-	{
+	public function insert($table, $field, $values) {
 		$sql="INSERT INTO $table($field)VALUES($values)";
 		$this->con->query($sql)or die($this->con->error);
 		return 1;
@@ -39,8 +37,7 @@ class Helper {
     *@param string $values
 	*@name sql
     */
-	public function insert_all($table, $values)
-	{
+	public function insert_all($table, $values) {
 		$sql="INSERT INTO $table VALUES($values)";
 		$this->con->query($sql)or die($this->con->error);
 	}
@@ -51,8 +48,7 @@ class Helper {
     *@param string $condition
 	*@name sql
     */
-	public function delete($table, $condition)
-	{
+	public function delete($table, $condition) {
 		$sql="DELETE FROM $table WHERE $condition";
 		$this->con->query($sql);
 	}
@@ -65,8 +61,7 @@ class Helper {
 	*@var array
 	*@name sql
     */
-	public function read_record($field, $table, $condition)
-	{
+	public function read_record($field, $table, $condition) {
 		$sql="SELECT $field FROM $table WHERE $condition";
 		$result=$this->con->query($sql) or die($this->con->error);
 		if ($result->num_rows==0) {
@@ -87,8 +82,7 @@ class Helper {
 	*@name sql
 	*@rertun $data
     */
-	public function read_all($field, $table)
-	{
+	public function read_all($field, $table) {
 		$sql="SELECT $field FROM $table";
 		$result=$this->con->query($sql) or die($this->con->error);
 		if ($result->num_rows==0) {
@@ -108,18 +102,15 @@ class Helper {
 	*@param string condition
 	*@name sql
     */
-	public function update($table, $field, $condition)
-	{
+	public function update($table, $field, $condition) {
 		$sql="UPDATE $table SET $field WHERE $condition";
 		$this->con->query($sql);
 	}
 	/**
 	* Class destructor which closes connection
 	*/
-	public function __destruct()
-	{
+	public function __destruct() {
 		$this->con->close();
 	}
 }
 $helper=new Helper("ecomm");
-?>
