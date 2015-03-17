@@ -1,10 +1,40 @@
 <?php
+/**
+*Sever_User_Email_Validation class performs server side email validation
+*/
+
 class Sever_User_Email_Validation extends Helper
 {
+/**
+*
+*class constructor ,checks from database whether email exists or not.
+*
+*@param string $databasename
+*
+*/
 function __construct($databasename)
 	{
-		 parent::__construct($databasename);
-		 	}
+		parent::__construct($databasename);
+	}
+	
+/**************email_Exitence Function*****************	
+	
+/**
+*
+*Checks wheteher email is present in database or not
+*
+*@param string $field
+*
+*@param string $table
+*
+*@param string $condition
+*
+*@var array
+*
+*@name sql
+
+*/	
+	
 function email_Exitence($field,$table ,$condition)
 	{
 		echo "$field &&";
@@ -19,6 +49,11 @@ function email_Exitence($field,$table ,$condition)
 			return false;
 		}	
 	}
+	
+	/**
+	* Calls Destructor,which disconnects db connection. 
+	*/
+	
 	function __destruct()
 	{
 		 parent::__destruct();
