@@ -19,9 +19,10 @@ class Helper
 	*/
 	function __construct($databasename)
 	{
-		$this->con=new mysqli(Config::HOST,Config::USER,Config::PASSWORD,$databasename);
+		$this->con=new mysqli(Config::HOST, Config::USER, Config::PASSWORD, $databasename);
 	}
 	/********Insert Function**************/
+
 	/**
 	* Inserts values into particular fields in database
 	*@param string $table
@@ -31,11 +32,13 @@ class Helper
 	*/
 	
 	function insert($table,$field,$values)
+
 	{
 		$sql="INSERT INTO $table($field)VALUES($values)";
 		$this->con->query($sql)or die($this->con->error);
 		return 1;
 	}
+
 	
 	/**
 	* Inserts all values into database
@@ -44,11 +47,13 @@ class Helper
 	*@name sql
     */
 	function insert_all($table,$values)
+
 	{
 		$sql="INSERT INTO $table VALUES($values)";
 		$this->con->query($sql)or die($this->con->error);
 	}
 	/*************Delete Function ***************/
+
 	/**
 	* Deletes particular values from database
 	*@param string $table
@@ -56,11 +61,13 @@ class Helper
 	*@name sql
     */
 	function delete($table,$condition)
+
 	{
 		$sql="DELETE FROM $table WHERE $condition";
 		$this->con->query($sql);
 	}
 	/************Select Function**************/
+
 	
 	/**
 	* Fetches required values from database
@@ -72,25 +79,22 @@ class Helper
     */
 	
 	function read_record($field,$table,$condition)
+
 	{
 		$sql="SELECT $field FROM $table WHERE $condition";
 		$result=$this->con->query($sql) or die($this->con->error);
 		//var_dump($sql);
-		if($result->num_rows==0)
-		{
+		if ($result->num_rows==0) {
 			return "No rows found";
-		}
-		else
-		{
-			while($row=$result->fetch_array(MYSQL_ASSOC))
-			{
+		} else {
+			while ($row=$result->fetch_array(MYSQL_ASSOC)) {
 				$data[]=$row;
 			}
-			 
 			return $data;
 		}
 	}
 	/****** Read all record*********************/
+
 	
 	/**
 	* Fetches all values from table in database
@@ -101,24 +105,19 @@ class Helper
 	*@rertun $data
     */
 	function read_all($field,$table)
+
 	{
 		$sql="SELECT $field FROM $table";
 		$result=$this->con->query($sql) or die($this->con->error);
-		if($result->num_rows==0)
-		{
+		if ($result->num_rows==0) {
 			return "No rows found";
-		}
-		else
-		{
-			while($row=$result->fetch_array(MYSQL_ASSOC))
-			{
+		} else {
+			while ($row=$result->fetch_array(MYSQL_ASSOC)) {
 				$data[]=$row;
 			}
-			
 			return $data;
 		}
 	}
-
 	/************Update Function**************/
 	
 	/**
