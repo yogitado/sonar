@@ -1,8 +1,18 @@
 <?php
 include ("Helper.php");
 echo $_POST['operation'];
+/**
+*Product class consist of all CRUD operations of a products
+*/
 class Product
 {
+  /**
+  *Sample class variables
+  *
+  *@access private
+  *
+  *@var string
+  */
 	private $helper;
 	function __construct($helper)
     {
@@ -35,6 +45,19 @@ class Product
 	}
 }
     /************ For Inserting Record ***********************/
+	/**
+	*Inserting records into database
+	*
+	*@param string $product_name
+	*
+	*@param string $price
+	*
+	*@param string $image_name
+	*
+	*@param string $description
+	*
+	*@name file
+	*/
     $product=new Product($helper);
     $product_name=$_REQUEST['product_name'];
     $price=$_REQUEST['price'];
@@ -50,8 +73,26 @@ class Product
     }
     $file="$uploaddir".$_FILES["image_path"]["name"];
     /************ For deleting Record ***********************/
+	/**
+	*Deleting values into database
+	*
+	*@param string $product_id
+	*/
 	$product_id=$_REQUEST['del'];
 	/****************************For Update Record***********************/
+	/**
+	*Inserting records into database
+	*
+	*@param string $product_id1
+	*
+	*@param string $price_name1
+	*
+	*@param string $image_name1
+	*
+	*@param string $description1
+	*
+	*@name file1
+	*/
 	$product_id1=$_REQUEST['product_id'];
 	$product_name1=$_REQUEST['product_name'];
 	$price1=$_REQUEST['price'];
