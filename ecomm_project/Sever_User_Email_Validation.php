@@ -2,9 +2,7 @@
 /**
 *Sever_User_Email_Validation class performs server side email validation
 */
-
-class Sever_User_Email_Validation extends Helper
-{
+class Sever_User_Email_Validation extends Helper {
 /**
 *
 *class constructor ,checks from database whether email exists or not.
@@ -12,13 +10,10 @@ class Sever_User_Email_Validation extends Helper
 *@param string $databasename
 *
 */
-function __construct($databasename)
-	{
+public function __construct ($databasename) {
 		parent::__construct($databasename);
 	}
-	
-/**************email_Exitence Function*****************	
-	
+/**************email_Exitence Function*****************
 /**
 *
 *Checks wheteher email is present in database or not
@@ -32,15 +27,12 @@ function __construct($databasename)
 *@var array
 *
 *@name sql
-
-*/	
-	
-function email_Exitence($field,$table ,$condition)
-	{
+*/
+public function email_Exitence ($field, $table, $condition) {
 		echo "$field &&";
 		echo " $table &&";
 		echo " $condition";
-		$sql="SELECT $field FROM $table WHERE $condition";	
+		$sql="SELECT $field FROM $table WHERE $condition";
 		$result=$this->con->query($sql) or die($this->con->error);
 		$row_cnt = mysqli_num_rows($result);
 		if ($row_cnt > 0) {
@@ -48,16 +40,12 @@ function email_Exitence($field,$table ,$condition)
 		} else {
 			return false;
 		}	
-	}
-	
+	}	
 	/**
-	* Calls Destructor,which disconnects db connection. 
+	* Calls Destructor,which disconnects db connection.
 	*/
-	
-	function __destruct()
-	{
+	public function __destruct() {
 		 parent::__destruct();
 	}
 }
 $sever_User_Email_Validation=new Sever_User_Email_Validation("ecomm");
-?>
