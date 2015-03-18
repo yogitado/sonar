@@ -14,15 +14,22 @@ class Product
   *@var string
   */
 	private $helper;
-	function __construct($helper) {
+	function __construct($helper)
+    {
 	echo "In constructor";
     $this->helper = $helper;
     }
+<<<<<<< HEAD
     public function addProduct($tablename, $user_fields, $user_values) {
+=======
+	public function add_product($tablename, $user_fields, $user_values)
+    {
+>>>>>>> f43e80e1e3d13ee324d911434f7df16d5b93af15
     $this->helper->insert($tablename, $user_fields, $user_values);
     echo 'success';
     header("location:ProductViewPage.php");
 	}
+<<<<<<< HEAD
     public function deleteProduct($tablename, $condition) {
     $this->helper->delete($tablename, $condition);
     header("location:ProductViewPage.php");
@@ -35,6 +42,24 @@ class Product
     $helper->read_all($product_list, $table);
     }
     public function viewSingleProduct($product_list, $table, $condition) {
+=======
+    public function delete_product($tablename, $condition)
+	{
+    $this->helper->delete($tablename, $condition);
+    header("location:ProductViewPage.php");
+	}
+    public function update_product($tablename, $field, $condition)
+	{
+    $this->helper->update($tablename, $field, $condition);
+    header("location:ProductViewPage.php");
+	}
+    public function view_product($product_list, $table)
+	{
+    $helper->read_all($product_list, $table);
+    }
+	public function view_single_product($product_list, $table, $condition)
+	{
+>>>>>>> f43e80e1e3d13ee324d911434f7df16d5b93af15
     $helper->read_record($product_list, $table, $condition);
 	}
 }
@@ -122,3 +147,4 @@ case "view_single":
 default:
     echo "<H3 color='red'>Invalid Option Please Try again!</h3>";
 }
+?>
