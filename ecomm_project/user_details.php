@@ -22,11 +22,11 @@ include_once "html/adminHeader.html";
 				$user_id=$row['user_id'];
 	?>
 	<tr>
-		<td width="60"><b><?= $row["user_id"]?></b></td> <!-- columns can have both text and images -->
-		<td width="60"><b><?=$row['email_id']?></b></td>
-		<td width="30"><?=$row['password'] ?></td>
-		<td width="80"><input type="button" class="btn btn-lg btn-danger"  value="DEACTIVATE" onClick='updateUser("<?=$row['user_id'] ?>")'/></td>
-		<td width="80"><input type="button" class="btn btn-lg btn-success" value="ACTIVATE" onClick='updateUser1("<?=$row['user_id'] ?>")'/></td>
+		<td width="10%"><b><?= $row["user_id"]?></b></td> <!-- columns can have both text and images -->
+		<td width="40%"><b><?=$row['email_id']?></b></td>
+		<td width="20%"><?=$row['password'] ?></td>
+		<td width="15%"><input type="button" class="btn btn-danger"  value="DEACTIVATE" onClick='updateUser("<?=$row['user_id'] ?>")'/></td>
+		<td width="15%"><input type="button" class="btn btn-success" value="ACTIVATE" onClick='updateUser1("<?=$row['user_id'] ?>")'/></td>
 	</tr>
 <?php
 			}
