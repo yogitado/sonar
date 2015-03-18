@@ -1,6 +1,4 @@
-<?php 
-
-include "HeaderHtml.php";
-include "html/BodyThankyou.html";
-include "html/FooterHtml.html";
-?>
+<?php
+include_once "HeaderHtml.php";
+include_once "html/BodyThankyou.html";
+include_once "html/FooterHtml.html";

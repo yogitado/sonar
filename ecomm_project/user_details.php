@@ -1,6 +1,6 @@
 ﻿<?php
-include('Helper_page.php');
-include "html/adminHeader.html";
+include_once('Helper_page.php');
+include_once "html/adminHeader.html";
 ?>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
 	<div class="table-responsive">
@@ -37,5 +37,5 @@ include "html/adminHeader.html";
 </div>
 <div>
 <?php
-include "html/adminNavigation.html";?>
+include_once "html/adminNavigation.html";?>
 </div>
