@@ -1,5 +1,5 @@
 <?php
-include('Helper.php');
+include_once('Helper.php');
 /**
 * This Helper_page class consist of a function required for LIMIT query in ProductViewPage.php 
 *
@@ -7,10 +7,8 @@ include('Helper.php');
 *
 *This class is inherited from Helper class
 */
-class Helper_page extends Helper
-{
-function __construct($databasename)
-	{
+class Helper_page extends Helper {
+function __construct($databasename) {
 		parent::__construct($databasename);
 	}
 	/**
@@ -26,8 +24,7 @@ function __construct($databasename)
 	*
 	*@return $data
 	*/
-function read_page($field, $table ,$condition)
-	{
+function read_page($field, $table, $condition) {
 		$sql="SELECT $field FROM $table $condition";
 		$result=$this->con->query($sql) or die($this->con->error);
 		if ($result->num_rows==0) {
@@ -42,8 +39,7 @@ function read_page($field, $table ,$condition)
 	/**
 	* Class destruct which closes connection
 	*/
-	function __destruct()
-	{
+	function __destruct() {
 		 parent::__destruct();
 	}
 }
@@ -51,4 +47,4 @@ function read_page($field, $table ,$condition)
 * Creates an object of an Helper_page
 */
 $helper_page=new Helper_page("ecomm");
-?>
+
