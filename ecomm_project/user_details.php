@@ -8,11 +8,11 @@ include "html/adminHeader.html";
 		echo "<table align='left' width=90% border='1'class='table table-striped'>";
 	?>
 	<tr>
-   		<th width="80">User ID</th>
+   	<th width="80">User ID</th>
     	<th width="60" >Email Address</th>
     	<th width="30" >Password</th>
     	<th width="10">De-Activate</th>
-		<th width="10">Activate</th>
+	<th width="10">Activate</th>
     	<br/>
  	</tr>
 	<?php
@@ -25,8 +25,8 @@ include "html/adminHeader.html";
 		<td width="60"><b><?= $row["user_id"]?></b></td> <!-- columns can have both text and images -->
 		<td width="60"><b><?=$row['email_id']?></b></td>
 		<td width="30"><?=$row['password'] ?></td>
-		<td width="80"><input type="button" value="DEACTIVATE" onClick='update_user("<?=$row['user_id'] ?>")'/></td>
-		<td width="80"><input type="button" value="ACTIVATE" onClick='update1_user("<?=$row['user_id'] ?>")'/></td>
+		<td width="80"><input type="button" value="DEACTIVATE" onClick='updateUser("<?=$row['user_id'] ?>")'/></td>
+		<td width="80"><input type="button" value="ACTIVATE" onClick='updateUser1("<?=$row['user_id'] ?>")'/></td>
 	</tr>
 <?php
 			}

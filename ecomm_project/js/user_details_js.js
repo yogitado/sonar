@@ -1,11 +1,11 @@
-function update_user(value)
+function updateUser(value)
 				{
 				
 				window.location="update_query.php?update="+value;
 				alert(value +"is Deactivated");
 				}
 				
-function update1_user(value)
+function updateUser1(value)
 				{
 				
 				window.location="update1_query.php?update="+value;
