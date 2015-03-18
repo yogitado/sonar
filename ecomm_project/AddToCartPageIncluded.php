@@ -1,6 +1,5 @@
 <?php
 session_start();
-include "HeaderHtml.php";
-include "BodyAddToCart.php";
-include "html/FooterHtml.html";
-?>
+include_once "HeaderHtml.php";
+include_once "BodyAddToCart.php";
+include_once "html/FooterHtml.html";

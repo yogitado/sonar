@@ -1,8 +1,5 @@
 <?php
 session_start();
-
-include "HeaderHtml.php";
-include "html/bodyHtml.html";
-include "html/footerHtml.html";
-
-?>
+include_once "HeaderHtml.php";
+include_once "html/bodyHtml.html";
+include_once "html/footerHtml.html";

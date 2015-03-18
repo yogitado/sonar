@@ -1,8 +1,5 @@
 <?php
 session_start();
-
-include "HeaderHtml.php";
-include "BodyOrderSummery.php";
-include "html/FooterHtml.html";
-
-?>
+include_once "HeaderHtml.php";
+include_once "BodyOrderSummery.php";
+include_once "html/FooterHtml.html";

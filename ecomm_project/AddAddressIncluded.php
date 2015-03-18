@@ -1,5 +1,4 @@
 <?php
-include "HeaderHtml.php";
-include "html/Address.html";
-include "html/FooterHtml.html";
-?>
+include_once "HeaderHtml.php";
+include_once "html/Address.html";
+include_once "html/FooterHtml.html";

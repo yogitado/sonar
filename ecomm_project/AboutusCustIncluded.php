@@ -1,7 +1,4 @@
 <?php
-
-include "HeaderHtml.php";
-include "html/AboutUsCust.html";
-include "html/FooterHtml.html";
-
-?>
+include_once "HeaderHtml.php";
+include_once "html/AboutUsCust.html";
+include_once "html/FooterHtml.html";
