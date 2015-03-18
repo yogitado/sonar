@@ -9,26 +9,30 @@
 <h2 class="sub-header">Order Catalog</h2>
 						<?php
 					include_once ('Helper_page.php');
-					$sql =$helper_page->read_record("u.user_name as username, o.total_price as total_price", "user_details u, order_details o, buy_details b", "b.user_id=u.user_id and b.buy_id=o.buy_id order by u.user_id desc");
+					$sql =$helper_page->read_record("distinct u.user_name as Username,p.product_name as Productname,b.price as Price ", "user_details u, product_details p, buy_details b", "u.user_id=b.user_id and b.product_id=p.product_id order by u.user_id");
 					$counter=0;
-
-   if (is_array($sql)) {
-      foreach ($sql as $row) {
-    ?>
-       <div class="table-responsive">
-            <table class="table table-striped">
+					?>
+<table class="table table-striped">
               <thead>
                 <tr>
                   <th>Sr No</th>
                   <th>User Name</th>
-                  <th>Total  Price</th>
+				  <th>Product Name</th>
+                  <th>Price</th>
                 </tr>
               </thead>
+			  <?php
+   if (is_array($sql)) {
+      foreach ($sql as $row) {
+    ?>
+       <div class="table-responsive">
+            
               <tbody>
 				<tr>
        <td width="60" ><b><?=++$counter ?></b></td>
-       <td width="30" ><?=$row['username'] ?>              </td>
-       <td width="80" ><?=$row['total_price'] ?>        </td>
+       <td width="30" ><?=$row['Username'] ?>              </td>
+       <td width="80" ><?=$row['Productname'] ?>        </td>
+	   <td width="80" ><?=$row['Price'] ?>        </td>
        </tr>	
               </tbody>
            <?php
