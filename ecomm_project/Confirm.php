@@ -30,7 +30,6 @@ $temp=explode(",", $temp);
     foreach ($temp as $key=>$booking2) {
 		if ($key == 0) {
 		$prodiddb= substr($booking2,-7,7);
-		echo $prodiddb;
 		}
        if ($key==2) {
 				$price+=$booking2;

@@ -9,7 +9,7 @@
 <h2 class="sub-header">Order Catalog</h2>
 						<?php
 					include_once ('Helper_page.php');
-					$sql =$helper_page->read_record("distinct u.user_name as Username,p.product_name as Productname,b.price as Price ", "user_details u, product_details p, buy_details b", "u.user_id=b.user_id and b.product_id=p.product_id order by u.user_id");
+					$sql =$helper_page->read_record("distinct u.user_name as Username,p.product_name as Productname,b.price as Price ", "user_details u, product_details p, buy_details b", "u.user_id=b.user_id and b.product_id=p.product_id order by u.user_id desc");
 					$counter=0;
 					?>
 <table class="table table-striped">
