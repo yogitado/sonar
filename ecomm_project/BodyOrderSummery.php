@@ -1,15 +1,13 @@
 <pre>
 <div id="body" >
 	<fieldset>
-	<legend>Order summery page</legend>
+	<legend> <font face="BedRock" color="MediumVioletRed" size="6">Detail Order Summary </legend>
 	<table border="2" class="table table-striped table-bordered" align="center">
-	<thead>
-		<tr>	
-		<th>Product_Name</th>
-		<th>Price</th>
-		<th>Image name</th>
-		<th>Your Products</th>
-		<th>Description </th>
+	<thead><tr><th width="13%"><font face="BedRock" color="DarkSlateGray">Product Name</th>
+		<th width="10%"><font face="BedRock" color="DarkSlateGray">Price</th>
+		<th width="15%"><font face="BedRock" color="DarkSlateGray">Image Name</th>
+		<th width="35%" height="35%"><font face="BedRock" color="DarkSlateGray">Product</th>
+		<th width="27%"><font face="BedRock" color="DarkSlateGray">Description </th>
 		</tr>
 	</thead>
 <?php
@@ -59,12 +57,12 @@ $temp=explode(",", $temp);
 echo "</tr>";
 ?>
 <tr>
-		<td colspan="4"><h4 style="color:blue;text-align:center">Total Price</h4></td>
-		<td><h4 style="color:blue;text-align:center"><?php  echo $price;?></h4></td>
+		<td colspan="4"><h4 style="color:DarkRed;text-align:center">Total Price</h4></td>
+		<td><h4 style="color:DarkRed;text-align:center"><?php  echo $price;?></h4></td>
 		</tr>
 </table>
-<h3>Address details :</h3>
-<table border="3">
+<h3>Address Details :</h3>
+<table border="3" BORDERCOLOR="#B8860B">
 <tr>
 <td>&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;</td>
 <td>&nbsp;&nbsp;&nbsp;<?php echo $_SESSION['email'];?>&nbsp;&nbsp;&nbsp;</td>
