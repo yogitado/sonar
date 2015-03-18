@@ -20,7 +20,8 @@ include "html/adminHeader.html";
 		if (is_array($result)) {
 			foreach ($result as $row) {
 				$user_id=$row['user_id'];
-	?>
+
+				?>
 	<tr>
 		<td width="10%"><b><?= $row["user_id"]?></b></td> <!-- columns can have both text and images -->
 		<td width="40%"><b><?=$row['email_id']?></b></td>
