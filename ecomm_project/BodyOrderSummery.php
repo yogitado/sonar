@@ -3,7 +3,6 @@
 	<fieldset>
 	<legend> <font face="BedRock" color="MediumVioletRed" size="6">Detail Order Summary </legend>
 	<table border="2" class="table table-striped table-bordered" align="center">
-
 	<thead><tr><th width="13%"><font face="BedRock" color="DarkSlateGray">Product Name</th>
 		<th width="10%"><font face="BedRock" color="DarkSlateGray">Price</th>
 		<th width="15%"><font face="BedRock" color="DarkSlateGray">Image Name</th>
