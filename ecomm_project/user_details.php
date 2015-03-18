@@ -20,7 +20,8 @@ include_once "html/adminHeader.html";
 		if (is_array($result)) {
 			foreach ($result as $row) {
 				$user_id=$row['user_id'];
-	?>
+
+				?>
 	<tr>
 		<td width="10%"><b><?= $row["user_id"]?></b></td> <!-- columns can have both text and images -->
 		<td width="40%"><b><?=$row['email_id']?></b></td>
@@ -29,11 +30,11 @@ include_once "html/adminHeader.html";
 		<td width="15%"><input type="button" class="btn btn-success" value="ACTIVATE" onClick='updateUser1("<?=$row['user_id'] ?>")'/></td>
 	</tr>
 <?php
-			}
-		echo "</table>";
-		}
+}
+echo "</table>";
+}
 ?>
-	</div>
+</div>
 </div>
 <div>
 <?php

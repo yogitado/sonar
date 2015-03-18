@@ -21,7 +21,8 @@ include "html/adminHeader.html";
 <font color="#3399FF" face="Bedrock" size="03"><b>Image Name: </b></font>&nbsp;&nbsp;<input type="text" name="image_name" id="in"  value="<?php echo  $row['image_name'];?>" required/></br>
 <font color="#3399FF" face="Bedrock" size="03"><b>Image Path: </b></font></br>&nbsp;&nbsp;<input type="file" class="btn btn-info active" name="image_path"  value="<?php echo $row['image_path'];?>" required/>
 <font color="#3399FF"face="Bedrock"  size="03"><b><p>Description :</p></b></font>
-<div><textarea name="Description" cols="38" rows="4" required><?php echo $row['description'];?></textarea></div>
+
+<div><textarea name="description" cols="38" rows="4" required><?php echo $row['description'];?></textarea></div>
 
 <?php
 }
