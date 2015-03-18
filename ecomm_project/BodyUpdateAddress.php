@@ -45,6 +45,11 @@ $email_id=$_SESSION['email'];
 </tr>
 <tr>
 <td>
+
+
+
+
+
 	<b>Pin Code : </b>
 	</td>
 <td>
