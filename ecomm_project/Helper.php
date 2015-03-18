@@ -18,7 +18,7 @@ class Helper {
 		try{
 		$this->con=new mysqli(Config::HOST, Config::USER, Config::PASSWORD, $databasename);
 		} catch(Exception $e){
-		echo $e->errorMessage(); 
+		echo $e->errorMessage();
 		}
 	}
 	/********Insert Function**************/
@@ -33,9 +33,8 @@ class Helper {
 		$sql="INSERT INTO $table($field)VALUES($values)";
 		try{
 		$this->con->query($sql);
-		
 		} catch(Exception $e){
-		echo $e->errorMessage(); 
+		echo $e->errorMessage();
 		}
 		return 1;
 	}
@@ -50,7 +49,7 @@ class Helper {
 		try{
 		$this->con->query($sql);
 		} catch(Exception $e){
-		echo $e->errorMessage(); 
+		echo $e->errorMessage();
 		}
 	}
 	/*************Delete Function ***************/
@@ -65,7 +64,7 @@ class Helper {
 		try{
 		$this->con->query($sql);
 		} catch(Exception $e){
-		echo $e->errorMessage(); 
+		echo $e->errorMessage();
 		}
 	}
 	/************Select Function**************/
@@ -91,7 +90,7 @@ class Helper {
 			return $data;
 		 }
 		} catch(Exception $e){
-		echo $e->errorMessage(); 
+		echo $e->errorMessage();
 		}
 		
 	}
@@ -118,7 +117,7 @@ class Helper {
 			return $data;
 		}
 		} catch(Exception $e){
-		echo $e->errorMessage(); 
+		echo $e->errorMessage();
 		}
 	}
 	/************Update Function**************/
@@ -134,7 +133,7 @@ class Helper {
 		try{
 		$this->con->query($sql);
 		} catch(Exception $e){
-		echo $e->errorMessage(); 
+		echo $e->errorMessage();
 		}
 	}
 	/**
@@ -144,7 +143,7 @@ class Helper {
 		try{
 		$this->con->close();
 		} catch(Exception $e){
-		echo $e->errorMessage(); 
+		echo $e->errorMessage();
 		}
 	}
 }

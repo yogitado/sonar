@@ -1,6 +1,6 @@
 <?php
-include "html/BodyHomeHtml.html";
-include "Helper.php";
+include_once "html/BodyHomeHtml.html";
+include_once "Helper.php";
 echo ' <div id="body"> ' ;
 
 $helperObj=new Helper("ecomm");
