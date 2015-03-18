@@ -33,19 +33,29 @@ public function email_Exitence ($field, $table, $condition) {
 		echo " $table &&";
 		echo " $condition";
 		$sql="SELECT $field FROM $table WHERE $condition";
-		$result=$this->con->query($sql) or die($this->con->error);
+		try {
+		$result=$this->con->query($sql);
 		$row_cnt = mysqli_num_rows($result);
 		if ($row_cnt > 0) {
 			return true;
 		} else {
 			return false;
-		}	
+		}
+	  } catch (Exception $e)
+	   {
+	    echo $e->errorMessage();
+	   }
 	}	
 	/**
 	* Calls Destructor,which disconnects db connection.
 	*/
 	public function __destruct() {
+		try{
 		 parent::__destruct();
+		 } catch ( Exception $e)
+		 { 
+		  echo $e->errorMessage();
+		 }
 	}
 }
 $sever_User_Email_Validation=new Sever_User_Email_Validation("ecomm");
