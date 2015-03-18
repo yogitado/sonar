@@ -1,6 +1,4 @@
 <?php
-#session_start();
-include "HeaderHtml.php";
-include "BodyHome.php";
-include "html/FooterHtml.html";
-?>
+include_once "HeaderHtml.php";
+include_once "BodyHome.php";
+include_once "html/FooterHtml.html";
