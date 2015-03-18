@@ -60,6 +60,6 @@ $email_id=$_SESSION['email'];
 <?php
 }
 } else {
-include "html/Address.html";
+include_once "html/Address.html";
 }
 ?>
