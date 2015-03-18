@@ -1,5 +1,4 @@
 <?php
-#session_start();
 include "html/BodyHomeHtml.html";
 include "Helper.php";
 echo ' <div id="body"> ' ;
@@ -50,7 +49,8 @@ echo ' <tbody>';
 		<td width="60" ><b><?=$row['product_name'] ?></b></td>
 		<td width="120" ><?=$row['description'] ?></td>
 <?php
-	echo ' <td width="10"><input type="checkbox" class="items" name="cartarr[]" value="'.implode(",", $row).'"></td> ';
+	echo ' <td width="10"><input type="checkbox" id="'.$row['product_id'].'"class="items" name="cartarr[]" value="'.implode(",", $row).'"></td> ';
+	echo '<input type="hidden" id="'.$row['product_id'].'" value="'.implode(",", $row).'" />';
 	echo ' </tr> ';
 	}
 	echo '</tbody>';
