@@ -1,16 +1,10 @@
-
 <?php
-include ("Helper.php");
+include_once ("Helper.php");
 $email_id=$_SESSION['email'];
  $result=$helper->read_record("*","user_details","user_id in(select user_id from user where email_id='$email_id' )");
  if(is_array($result)){
- 
- 
  foreach($result as $row){
-
 ?>
-
-
 <div id="body">
 <form  action="UpdateAddressDetails.php" method="POST" style="text-align: center;font:xx-large;" theme="simple">
 <pre>
@@ -60,18 +54,12 @@ $email_id=$_SESSION['email'];
 </tr>
 	</table>
 	</pre>
-	
 	<input type="submit" class="btn btn-info" value="add detail">
 </form>
 </div>
-
 <?php
 }
-}
-else
-{
-	
-	include "html/Address.html";
-	
+} else {
+include "html/Address.html";
 }
 ?>
