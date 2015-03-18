@@ -26,7 +26,7 @@ function __construct($databasename)
 	*
 	*@return $data
 	*/
-function readPage($field, $table ,$condition)
+function read_page($field, $table ,$condition)
 	{
 		$sql="SELECT $field FROM $table $condition";
 		$result=$this->con->query($sql) or die($this->con->error);
