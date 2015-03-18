@@ -1,11 +1,10 @@
 <?php
-include ("Helper.php");
+include_once ("Helper.php");
 echo $_POST['operation'];
 /**
 *Product class consist of all CRUD operations of a products
 */
-class Product
-{
+class Product {
   /**
   *Sample class variables
   *
@@ -14,33 +13,27 @@ class Product
   *@var string
   */
 	private $helper;
-	function __construct($helper)
-    {
+	public function __construct($helper) {
 	echo "In constructor";
     $this->helper = $helper;
     }
-	public function addProduct($tablename, $user_fields, $user_values)
-    {
+	public function addProduct($tablename, $user_fields, $user_values) {
     $this->helper->insert($tablename, $user_fields, $user_values);
     echo 'success';
     header("location:ProductViewPage.php");
 	}
-    public function deleteProduct($tablename, $condition)
-	{
+    public function deleteProduct($tablename, $condition) {
     $this->helper->delete($tablename, $condition);
     header("location:ProductViewPage.php");
 	}
-    public function updateProduct($tablename, $field, $condition)
-	{
+    public function updateProduct($tablename, $field, $condition) {
     $this->helper->update($tablename, $field, $condition);
     header("location:ProductViewPage.php");
 	}
-    public function viewProduct($product_list, $table)
-	{
+    public function viewProduct($product_list, $table) {
     $helper->read_all($product_list, $table);
     }
-	public function viewSingleProduct($product_list, $table, $condition)
-	{
+	public function viewSingleProduct($product_list, $table, $condition) {
     $helper->read_record($product_list, $table, $condition);
 	}
 }
@@ -128,4 +121,3 @@ case "view_single":
 default:
     echo "<H3 color='red'>Invalid Option Please Try again!</h3>";
 }
-?>
