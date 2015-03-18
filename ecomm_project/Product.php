@@ -18,23 +18,23 @@ class Product
 	echo "In constructor";
     $this->helper = $helper;
     }
-	public function add_product($tablename, $user_fields, $user_values) {
+    public function addProduct($tablename, $user_fields, $user_values) {
     $this->helper->insert($tablename, $user_fields, $user_values);
     echo 'success';
     header("location:ProductViewPage.php");
 	}
-    public function delete_product($tablename, $condition) {
+    public function deleteProduct($tablename, $condition) {
     $this->helper->delete($tablename, $condition);
     header("location:ProductViewPage.php");
 	}
-    public function update_product($tablename, $field, $condition) {
+    public function updateProduct($tablename, $field, $condition) {
     $this->helper->update($tablename, $field, $condition);
     header("location:ProductViewPage.php");
 	}
-    public function view_product($product_list, $table) {
+    public function viewProduct($product_list, $table) {
     $helper->read_all($product_list, $table);
     }
-	public function view_single_product($product_list, $table, $condition) {
+    public function viewSingleProduct($product_list, $table, $condition) {
     $helper->read_record($product_list, $table, $condition);
 	}
 }
@@ -103,21 +103,21 @@ class Product
     $file1="$uploaddir".$_FILES["image_path"]["name"];
 switch ($_REQUEST['operation']) {
 case "add":
-	$product->add_product("product_details", "product_name,price,image_name,image_path,description",
+	$product->addProduct("product_details", "product_name,price,image_name,image_path,description",
 	"'$product_name','$price','$image_name','$file','$description'");
 	break;
 case "update":
-	$product->update_product("product_details", "product_name='$product_name1',price='$price1',image_name='$image_name1',
+	$product->updateProduct("product_details", "product_name='$product_name1',price='$price1',image_name='$image_name1',
 	image_path='$file1',description='$description1'","product_id='$product_id1'");
 	break;
 case "delete_rec":
-	$product->delete_product("product_details", "product_id='$product_id'");
+	$product->deleteProduct("product_details", "product_id='$product_id'");
     break;
 case "view":
-    $product->view_product($product_list, $table);
+    $product->viewProduct($product_list, $table);
     break;
 case "view_single":
-    $product->view_single_product($product_list, $table, $condition);
+    $product->viewSingleProduct($product_list, $table, $condition);
     break;
 default:
     echo "<H3 color='red'>Invalid Option Please Try again!</h3>";
