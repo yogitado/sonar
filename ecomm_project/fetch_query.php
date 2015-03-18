@@ -22,10 +22,12 @@ include "html/adminHeader.html";
 <font color="#3399FF" face="Bedrock" size="03"><b>Image Path: </b></font></br>&nbsp;&nbsp;<input type="file" class="btn btn-info active" name="image_path"  value="<?php echo $row['image_path'];?>" required/>
 <font color="#3399FF"face="Bedrock"  size="03"><b><p>Description :</p></b></font>
 <div><textarea name="Description" cols="38" rows="4" required><?php echo $row['description'];?></textarea></div>
+
 <?php
 }
 }
 ?>
+
 <input type="submit" class="btn btn-primary" value="UPDATE" /> <input type="hidden" class="btn btn-primary" name="operation" value="update"/> <button type="button" class="btn btn-primary" onclick="newDoc()">Cancel</button>
 </pre>
 </div>
