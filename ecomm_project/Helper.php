@@ -15,7 +15,11 @@ class Helper {
 	*$param string $databasename
 	*/
 	public function __construct($databasename) {
+		try{
 		$this->con=new mysqli(Config::HOST, Config::USER, Config::PASSWORD, $databasename);
+		} catch(Exception $e){
+		echo $e->errorMessage(); 
+		}
 	}
 	/********Insert Function**************/
 	/**
@@ -27,7 +31,12 @@ class Helper {
 	*/
 	public function insert($table, $field, $values) {
 		$sql="INSERT INTO $table($field)VALUES($values)";
-		$this->con->query($sql)or die($this->con->error);
+		try{
+		$this->con->query($sql);
+		
+		} catch(Exception $e){
+		echo $e->errorMessage(); 
+		}
 		return 1;
 	}
 	/**
@@ -38,7 +47,11 @@ class Helper {
     */
 	public function insert_all($table, $values) {
 		$sql="INSERT INTO $table VALUES($values)";
-		$this->con->query($sql)or die($this->con->error);
+		try{
+		$this->con->query($sql);
+		} catch(Exception $e){
+		echo $e->errorMessage(); 
+		}
 	}
 	/*************Delete Function ***************/
 	/**
@@ -49,7 +62,11 @@ class Helper {
     */
 	public function delete($table, $condition) {
 		$sql="DELETE FROM $table WHERE $condition";
+		try{
 		$this->con->query($sql);
+		} catch(Exception $e){
+		echo $e->errorMessage(); 
+		}
 	}
 	/************Select Function**************/
 	/**
@@ -62,7 +79,9 @@ class Helper {
     */
 	public function read_record($field, $table, $condition) {
 		$sql="SELECT $field FROM $table WHERE $condition";
-		$result=$this->con->query($sql) or die($this->con->error);
+		try {
+		$result=$this->con->query($sql);
+		
 		if ($result->num_rows==0) {
 			return "No rows found";
 		} else {
@@ -70,7 +89,11 @@ class Helper {
 				$data[]=$row;
 			}
 			return $data;
+		 }
+		} catch(Exception $e){
+		echo $e->errorMessage(); 
 		}
+		
 	}
 	/****** Read all record*********************/
 	/**
@@ -83,7 +106,9 @@ class Helper {
     */
 	public function read_all($field, $table) {
 		$sql="SELECT $field FROM $table";
-		$result=$this->con->query($sql) or die($this->con->error);
+		try {
+		$result=$this->con->query($sql);
+		
 		if ($result->num_rows==0) {
 			return "No rows found";
 		} else {
@@ -91,6 +116,9 @@ class Helper {
 				$data[]=$row;
 			}
 			return $data;
+		}
+		} catch(Exception $e){
+		echo $e->errorMessage(); 
 		}
 	}
 	/************Update Function**************/
@@ -103,13 +131,21 @@ class Helper {
     */
 	public function update($table, $field, $condition) {
 		$sql="UPDATE $table SET $field WHERE $condition";
+		try{
 		$this->con->query($sql);
+		} catch(Exception $e){
+		echo $e->errorMessage(); 
+		}
 	}
 	/**
 	* Class destructor which closes connection
 	*/
 	public function __destruct() {
+		try{
 		$this->con->close();
+		} catch(Exception $e){
+		echo $e->errorMessage(); 
+		}
 	}
 }
 $helper=new Helper("ecomm");

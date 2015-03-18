@@ -9,7 +9,11 @@ include_once('Helper.php');
 */
 class Helper_page extends Helper {
 function __construct($databasename) {
+		try{
 		parent::__construct($databasename);
+		}catch(Exception $e){
+		echo $e->errorMessage(); 
+		}
 	}
 	/**
 	* Fetches all values from the table in database with a condition
@@ -26,7 +30,9 @@ function __construct($databasename) {
 	*/
 function read_page($field, $table, $condition) {
 		$sql="SELECT $field FROM $table $condition";
-		$result=$this->con->query($sql) or die($this->con->error);
+		try{
+		$result=$this->con->query($sql);
+		
 		if ($result->num_rows==0) {
 			return "No rows found";
 			} else {
@@ -35,12 +41,19 @@ function read_page($field, $table, $condition) {
 					}
 					return $data;
 				}
+			}catch(Exception $e){
+			echo $e->errorMessage(); 
+		}
 	}
 	/**
 	* Class destruct which closes connection
 	*/
 	function __destruct() {
+		try{
 		 parent::__destruct();
+		 } catch(Exception $e){
+		echo $e->errorMessage(); 
+		}
 	}
 }
 /**
