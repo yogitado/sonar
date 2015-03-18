@@ -1,18 +1,18 @@
 <?php
 include_once('Helper.php');
 /**
-* This Helper_page class consist of a function required for LIMIT query in ProductViewPage.php 
+* This Helper_page class consist of a function required for LIMIT query in ProductViewPage.php
 *
 *The constructor is used to establish connection with database
 *
 *This class is inherited from Helper class
 */
 class Helper_page extends Helper {
-function __construct($databasename) {
+public function __construct($databasename) {
 		try{
 		parent::__construct($databasename);
 		}catch(Exception $e){
-		echo $e->errorMessage(); 
+		echo $e->errorMessage();
 		}
 	}
 	/**
@@ -28,7 +28,7 @@ function __construct($databasename) {
 	*
 	*@return $data
 	*/
-function read_page($field, $table, $condition) {
+public function read_page($field, $table, $condition) {
 		$sql="SELECT $field FROM $table $condition";
 		try{
 		$result=$this->con->query($sql);
@@ -42,17 +42,17 @@ function read_page($field, $table, $condition) {
 					return $data;
 				}
 			}catch(Exception $e){
-			echo $e->errorMessage(); 
+			echo $e->errorMessage();
 		}
 	}
 	/**
 	* Class destruct which closes connection
 	*/
-	function __destruct() {
+	public function __destruct() {
 		try{
 		 parent::__destruct();
 		 } catch(Exception $e){
-		echo $e->errorMessage(); 
+		echo $e->errorMessage();
 		}
 	}
 }

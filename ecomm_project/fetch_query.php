@@ -1,9 +1,9 @@
 <?php
-include "Helper.php";
+include_once "Helper.php";
 $product_id=$_REQUEST['update'];
 ?>
 <?php
-include "html/adminHeader.html";
+include_once "html/adminHeader.html";
 ?>
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
 <form style="align:center" action="Product.php" enctype="multipart/form-data" method="post">
@@ -17,7 +17,7 @@ include "html/adminHeader.html";
 ?>
 <input type="hidden" name="product_id" id="pn"  value="<?php echo $row['product_id'];?>" required /></br>
 <font color="#3399FF" face="Bedrock" size="03"><b>Product Name: </b></font><input type="text" name="product_name" id="pn"  value="<?php echo $row['product_name'];?>" required/></br>
-<font color="#3399FF" face="Bedrock" size="03"><b>Price:  </b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="price" id="price"  value="<?php  echo $row['price']; ?>" required/></br> 
+<font color="#3399FF" face="Bedrock" size="03"><b>Price:  </b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="price" id="price"  value="<?php  echo $row['price']; ?>" required/></br>
 <font color="#3399FF" face="Bedrock" size="03"><b>Image Name: </b></font>&nbsp;&nbsp;<input type="text" name="image_name" id="in"  value="<?php echo  $row['image_name'];?>" required/></br>
 <font color="#3399FF" face="Bedrock" size="03"><b>Image Path: </b></font></br>&nbsp;&nbsp;<input type="file" class="btn btn-info active" name="image_path"  value="<?php echo $row['image_path'];?>" required/>
 <font color="#3399FF"face="Bedrock"  size="03"><b><p>Description :</p></b></font>
@@ -34,5 +34,5 @@ include "html/adminHeader.html";
 </div>
 </form>
 <?php
-include "html/adminNavigation.html";
+include_once "html/adminNavigation.html";
 ?>
