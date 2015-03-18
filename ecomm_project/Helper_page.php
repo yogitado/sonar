@@ -32,7 +32,6 @@ public function read_page($field, $table, $condition) {
 		$sql="SELECT $field FROM $table $condition";
 		try{
 		$result=$this->con->query($sql);
-		
 		if ($result->num_rows==0) {
 			return "No rows found";
 			} else {

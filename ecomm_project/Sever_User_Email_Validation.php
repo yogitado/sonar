@@ -41,19 +41,17 @@ public function email_Exitence ($field, $table, $condition) {
 		} else {
 			return false;
 		}
-	  } catch (Exception $e)
-	   {
+	  } catch (Exception $e) {
 	    echo $e->errorMessage();
 	   }
-	}	
+	}
 	/**
 	* Calls Destructor,which disconnects db connection.
 	*/
 	public function __destruct() {
 		try{
 		 parent::__destruct();
-		 } catch ( Exception $e)
-		 { 
+		 } catch ( Exception $e) {
 		  echo $e->errorMessage();
 		 }
 	}

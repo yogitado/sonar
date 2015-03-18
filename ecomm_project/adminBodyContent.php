@@ -22,7 +22,6 @@
                   <th>Sr No</th>
                   <th>User Name</th>
                   <th>Total  Price</th>
- 
                 </tr>
               </thead>
               <tbody>
@@ -30,8 +29,7 @@
        <td width="60" ><b><?=++$counter ?></b></td>
        <td width="30" ><?=$row['username'] ?>              </td>
        <td width="80" ><?=$row['total_price'] ?>        </td>
-       </tr>
-					
+       </tr>	
               </tbody>
            <?php
     }
