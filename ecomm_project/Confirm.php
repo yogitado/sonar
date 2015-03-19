@@ -1,6 +1,7 @@
 <?php
 include_once "HeaderHtml.php";
 include_once "Helper.php";
+include_once "stringconvert.php";
 $helperObj=new Helper("ecomm");
 $pricedb;
 $userdb=$_SESSION['user'];
@@ -15,15 +16,11 @@ $condition="user_id='".$var."'";
 $record=$obj->read_record($field, $table, $condition);
 $arra=[];
 $price=0;
+
 $arra=array(explode("&",str_replace('%2F','/',(str_replace('%2C',',',urldecode(html_entity_decode($_SESSION['key'])))))));
-	$array1 = $arra[0];
-	foreach ($array1 as $key =>$value) {
-		if ($key == 0) {
-			$array1[$key]= substr($value,18,-18);
-		} else {
-			$array1[$key] = substr($value,14,-14);
-		}
-	}
+stringConvert($arra); // Its conversion of querystring data into Array Format
+
+
 foreach ($arra[0] as $booking) {
 $temp=$booking;
 $temp=explode(",", $temp);

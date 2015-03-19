@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpdox xmlns="http://phpdox.net/config">
- <project name="Ecomm" source="../ecomm_project" workdir="phpdox">
+ <project name="Ecomm_Pradeep" source="../ecomm_project" workdir="phpdox">
   <collector publiconly="false">
    <include mask="*.php"/>
    <exclude mask="*autoload.php"/>
