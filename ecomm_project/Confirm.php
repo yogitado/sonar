@@ -1,7 +1,8 @@
 <?php
 include_once "HeaderHtml.php";
 include_once "Helper.php";
-include_once "stringconvert.php";
+include_once "Foreach.php";
+include_once "DisplayLogic.php";
 $helperObj=new Helper("ecomm");
 $pricedb;
 $userdb=$_SESSION['user'];
@@ -18,9 +19,6 @@ $arra=[];
 $price=0;
 
 $arra=array(explode("&",str_replace('%2F','/',(str_replace('%2C',',',urldecode(html_entity_decode($_SESSION['key'])))))));
-stringConvert($arra); // Its conversion of querystring data into Array Format
-
-
 foreach ($arra[0] as $booking) {
 $temp=$booking;
 $temp=explode(",", $temp);

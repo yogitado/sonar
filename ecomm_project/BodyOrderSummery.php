@@ -3,16 +3,11 @@
 	<fieldset>
 	<legend> <font face="BedRock" color="MediumVioletRed" size="6">Detail Order Summary </legend>
 	<table border="2" class="table table-striped table-bordered" align="center">
-	<thead><tr><th width="13%"><font face="BedRock" color="DarkSlateGray">Product Name</th>
-		<th width="10%"><font face="BedRock" color="DarkSlateGray">Price</th>
-		<th width="15%"><font face="BedRock" color="DarkSlateGray">Image Name</th>
-		<th width="35%" height="35%"><font face="BedRock" color="DarkSlateGray">Product</th>
-		<th width="27%"><font face="BedRock" color="DarkSlateGray">Description </th>
-		</tr>
-	</thead>
+	
 <?php
+include_once"MainTable.php";
 include_once "Helper.php";
-include_once "stringconvert.php";
+include_once "DisplayLogic.php";
 $var=$_SESSION['user'];
 $obj = new Helper("ecomm");
 $field="user_id,mobile,address,city,zip";
@@ -22,15 +17,25 @@ $record=$obj->read_record($field, $table, $condition);
 $arra=[];
 $price=0;
 $arra=array(explode("&",str_replace('%2F','/',(str_replace('%2C',',',urldecode(html_entity_decode($_SESSION['key'])))))));
- // Its conversion of querystring data into Array Format
+	$array1 = $arra[0];
+	
+	
+	include_once"Foreach.php";
+echo '<tr>';
 
-stringConvert1($arra,$price);
+
+$objTable2=new DisplayLogic();
+$price=$objTable2->displayForeach($arra[0]);
+
+
+	
+
 echo "</tr>";
 ?>
-<tr>
-		<td colspan="4"><h4 style="color:DarkRed;text-align:center">Total Price</h4></td>
-		<td><h4 style="color:DarkRed;text-align:center"><?php  echo $price;?></h4></td>
-		</tr>
+<?php
+	include_once"BottomTable.php";	
+		echo"</tr>";
+		?>
 </table>
 <h3>Address Details :</h3>
 <table border="3" BORDERCOLOR="#B8860B">
@@ -53,7 +58,7 @@ foreach ($record as $key ) {
 ?>
 </table>
 <form method="POST" action="Validate.php">
-<input type="submit" name="btn_submit" class="btn btn-info" value="Address" />&nbsp;<input type="submit" name="btn_submit"  class="btn btn-info" value="Confirm" />&nbsp;<input type="submit" name="btn_submit" class="btn btn-info"  value="Cancel" />
+<input type="submit" name="btn_submit" class="btn btn-info" value="Address" />&nbsp;<input type="submit" name="btn_submit"  class="btn btn-info" value="Confirm" />&nbsp;<input type="submit" name="btn_submit" class="btn btn-info"  id="cancel_addtoCart" value="Cancel" />
 </form>
 	</fieldset>
 </div>
