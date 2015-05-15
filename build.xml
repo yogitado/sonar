@@ -30,8 +30,32 @@
  </target>
 
  
- 
  <target name="jslint" description="Run the JSLint tool on JS files">
+  <fileset dir="${basedir}/js" id="jsfiles.raw">
+    <include name="**/*.js" />
+   <!-- <exclude name="**/*.min.js" /> -->
+  </fileset>
+  <pathconvert pathsep=" " property="jsfiles.clean" refid="jsfiles.raw" />
+  <exec executable="java" output="build/logs/jslint.xml">
+  <!-- <arg line="-/ /-reporter=jslint ${jsfiles.clean}" /> -->
+   <arg line="-jar jslint4java.jar --report xml ${jsfiles.clean}" /> 
+  </exec>
+</target>
+
+
+
+ <target name="csslint" description="Run the CSSLint tool on CSS files">
+   <fileset dir="${basedir}/css" id="cssfiles.raw">
+     <include name="**/*.css" />
+   </fileset>
+   <pathconvert pathsep=" " property="cssfiles.clean" refid="cssfiles.raw" />
+   <exec executable="csslint" output="build/logs/csslint.xml">
+     <arg line="--warnings=box-model,floats --errors=ids,important --format=lint-xml ${cssfiles.clean}" />
+   </exec>
+</target> 
+ 
+ 
+ <!--<target name="jslint" description="Run the JSLint tool on JS files">
   <fileset dir="${basedir}/js">
     <include name="*.js" />
     <exclude name="*.min.js" />
@@ -41,9 +65,9 @@
 
   <!--<exec executable="${basedir}/build/tools/jslint4java-2.0.2.jar" output="${basedir}/build/logs/jslint.xml">
     <arg line="report xml" />-->
-  </exec>
+ <!-- </exec>
 </target>
- 
+--> 
  
 <!--
  <target name="lint">
