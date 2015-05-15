@@ -40,7 +40,7 @@
     <arg line="-jar ${basedir}/build/tools/jslint4java-2.0.2.jar --report xml " />
 
   <!--<exec executable="${basedir}/build/tools/jslint4java-2.0.2.jar" output="${basedir}/build/logs/jslint.xml">
-    <arg line="--report xml" />-->
+    <arg line="report xml" />-->
   </exec>
 </target>
  
