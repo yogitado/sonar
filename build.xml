@@ -31,16 +31,15 @@
 
  
  <target name="jslint" description="Run the JSLint tool on JS files">
-  <fileset dir="${basedir}/ecomm_project" id="jsfiles.raw">
+ <fileset dir="${basedir}/js" >
     <include name="**/*.js" />
-   <!-- <exclude name="**/*.min.js" /> -->
-  </fileset>
-  <pathconvert pathsep=" " property="jsfiles.clean" refid="jsfiles.raw" />
-  <exec executable="java" output="build/logs/jslint.xml">
-  <!-- <arg line="-/ /-reporter=jslint ${jsfiles.clean}" /> -->
-   <arg line="-jar jslint4java.jar --report xml ${jsfiles.clean}" /> 
-  </exec>
-</target>
+    <exclude name="**/*.min.js" />
+ </fileset>
+    <exec executable="jshint" output="build/logs/jslint.xml">
+    <arg line="--reporter=jslint ." />
+ </exec>
+</target> 
+
 
 
 
