@@ -36,7 +36,7 @@
     <include name="**/*.js" />
     <exclude name="**/*.min.js" />
   </fileset>
-  <exec executable="S{basedir}/build/tools/jslint4java-2.0.2.jar" output="${basedir}/build/logs/jslint.xml">
+  <exec executable="${basedir}/build/tools/jslint4java-2.0.2.jar" output="${basedir}/build/logs/jslint.xml">
     <arg line="--report xml" />
   </exec>
 </target>
