@@ -29,6 +29,20 @@
   </exec>
  </target>
 
+ 
+ 
+ <target name="jslint" description="Run the JSLint tool on JS files">
+  <fileset dir="${basedir}/src">
+    <include name="**/*.js" />
+    <exclude name="**/*.min.js" />
+  </fileset>
+  <pathconvert pathsep=" " property="jsfiles.clean" />
+  <exec executable="S{basedir}/build/tools/jslint4java-2.0.2.jar" output="${basedir}/build/logs/jslint.xml">
+    <arg line="--report xml" />
+  </exec>
+</target>
+ 
+ 
 <!--
  <target name="lint">
   <apply executable="php" failonerror="true">
