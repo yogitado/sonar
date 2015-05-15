@@ -32,7 +32,7 @@
  
  
  <target name="jslint" description="Run the JSLint tool on JS files">
-  <fileset dir="${basedir}/src">
+  <fileset dir="${basedir}/js">
     <include name="**/*.js" />
     <exclude name="**/*.min.js" />
   </fileset>
