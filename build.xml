@@ -54,6 +54,17 @@
 </target> 
 
 
+<target name="jshint" description="Run the JSHint tool on JS files">
+ <fileset dir="${basedir}/js" >
+    <include name="**/*.js" />
+    <exclude name="**/*.min.js" />
+ </fileset>
+    <exec executable="jshint" output="build/logs/jshint.xml">
+    <arg line="--reporter=jshint ." />
+ </exec>
+</target> 
+
+
  
  
  
